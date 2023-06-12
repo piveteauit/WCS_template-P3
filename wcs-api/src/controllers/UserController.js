@@ -3,8 +3,8 @@ const BaseController = require("./BaseController");
 
 class UserController extends BaseController {
 
-    constructor(req, res) {
-        super(req, res);
+    constructor(req, res, next) {
+        super(req, res, next);
         this.model = new UserModel();
     }
 

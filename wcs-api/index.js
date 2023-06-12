@@ -18,6 +18,6 @@ APIRouter.use('/movies', movieRouter)
 
 app.use('/api', APIRouter);
 
-app.listen(8080, function() {
-    console.log('API is running on 8080')
+app.listen(8082, function() {
+    console.log('API is running on 8082')
 })
