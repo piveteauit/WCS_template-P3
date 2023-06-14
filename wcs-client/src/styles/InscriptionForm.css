@@ -1,0 +1,33 @@
+.inscription-page {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.inscription-page>h1 {
+    margin: 1em;
+    letter-spacing: 0.2em;
+}
+
+.inscription-form {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.inscription-form>input {
+    width: 50%;
+    margin: 1em;
+    padding: 0.5em;
+}
+
+.password-msg { 
+    font-size: 0.8em;
+    color: red; 
+}
+.same-pwd {display: none;}
