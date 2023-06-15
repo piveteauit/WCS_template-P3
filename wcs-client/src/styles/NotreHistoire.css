@@ -32,4 +32,12 @@
 .histoire-container>p {
     margin-bottom: 1em;
     padding: 1em;
+    text-align: center;
+    line-height: 1.2;
+}
+
+span.inovin {
+    font-family: var(--main-font);
+    color: var(--wine-color);
+    font-weight: 700;
 }
