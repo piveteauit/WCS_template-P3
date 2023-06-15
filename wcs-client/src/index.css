@@ -20,11 +20,12 @@ body {
   height: 100vh;
   font-size: 16px;
   font-family: var(--main-font);
+  letter-spacing: 0.1em;
 }
 
 h1, h2, h3 {
   font-family: var(--title-font);
-  /* letter-spacing: 20%; */
+  letter-spacing: 0.2em;
 }
 
 code {

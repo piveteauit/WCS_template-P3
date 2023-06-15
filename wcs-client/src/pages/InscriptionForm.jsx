@@ -45,13 +45,26 @@ const InscriptionForm = () => {
             <Navbar />
             <h1>Inscription</h1>
             <form className='inscription-form'>
+                <label htmlFor='last-name'>Nom</label>
                 <input type='text' name='last-name' id='last-name' placeholder='Entrez votre nom...' />
+                
+                <label htmlFor='first-name'>Prénom</label>
                 <input type='text' name='first-name' id='first-name' placeholder='Entrez votre prénom...' />
+                
+                <label htmlFor='age'>Age</label>
                 <input type='number' name='age' id='age' min='18' placeholder='Entrez votre âge...' />
+                
+                <label htmlFor='email'>Adresse mail</label>
                 <input type='email' name='email' id='email' placeholder='Entrez votre adresse mail...' />
-                <input type='date' name='date' id='date' placeholder='Choisissez votre date...' />
+                
+                <label htmlFor='date'>Date d'atelier</label>
+                <input type='date' name='date' id='date' />
+                
+                <label htmlFor='password'>Mot de passe</label>
                 <input type='password' name='password' id='password' placeholder='Choisissez votre mot de passe' onChange={handlePassword} value={password} required/>
                 <p className='password-msg'>{errorMessage}</p>
+                
+                <label htmlFor='same-password'>Confirmation mot de passe</label>
                 <input type='password' name='password' id='same-password' placeholder='Choisissez votre mot de passe' onChange={handleSamePassword} value={samePassword} required/>
                 <p className={samePassword === password ? "same-pwd" : "password-msg"}>Erreur : les mots de passe sont différents</p>
             </form>
