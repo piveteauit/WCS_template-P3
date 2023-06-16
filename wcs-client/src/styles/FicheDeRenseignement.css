@@ -1,0 +1,89 @@
+.checkbox-container {
+    width: 100%;
+    height: 10vh;
+    background: #fff;
+    display: flex;
+
+    justify-content: flex-end;
+}
+
+.button {
+    background: #d2d2d2;
+    width: 40px;
+    height: 20px;
+    border-radius: 200px;
+    cursor: pointer;
+    position: relative;
+    transition: .3s ease-in-out;
+}
+
+.button::before {
+    content: "";
+    position: absolute;
+    background: #fff;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    margin: 2px;
+    transition: .3s ease-in-out;
+}
+
+input:checked+.button {
+    background: #811111;
+}
+
+input:checked+.button::before {
+    transform: translateX(20px);
+}
+
+input {
+    display: none;
+}
+
+.vin-container {
+    display: grid;
+    grid-template-columns: 50%50%;
+    padding: 1em;
+    height: 10vh;
+}
+
+.vin-container :nth-child(1) {
+    margin: 3em 0 0 6em;
+}
+
+.vin-container :nth-child(2) {
+    margin: 1.5em 6em 0 0;
+}
+
+
+
+.FicheDeRenseignement-container h1 {
+    width: 30%;
+    text-align: center;
+    margin: 0 auto;
+
+}
+
+
+.olfactif {
+    width: 100%;
+    padding: 2em;
+}
+
+
+.olfactif>h2 {
+
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid var(--dark-color);
+    line-height: 0.1em;
+    margin: 0.625em 0 1.25em;
+
+}
+
+
+.olfactif>h2>span {
+    background-color: var(--lightest-color);
+    padding: 0 2em;
+    font-family: var(--title-font);
+}
