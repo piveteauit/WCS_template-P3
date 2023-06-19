@@ -118,8 +118,9 @@ const FicheDeRenseignement = () => {
                             <div className="form-infos-complementaires">
                                 <textarea name="infod-complementaires" id="infos" placeholder='informations complémentaires'>
                                 </textarea>
+                                <button>submit</button>
                             </div>
-                            .
+
                         </div>
                     </div>
                 </div>
