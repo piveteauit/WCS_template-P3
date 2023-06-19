@@ -65,6 +65,7 @@
     color: var(--dark-color);
 }
 
+.navbar-container>a:hover,
 .navbar-container>a.active,
 .nav-ateliers>a.active {
     color: var(--highlight-color);

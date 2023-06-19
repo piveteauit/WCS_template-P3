@@ -12,17 +12,9 @@ const AtelierCrea = () => {
                 Notre atelier <span className='inovin'>INOVIN</span> est unique en son genre : vous apprendrez à créer votre propre vin en sélectionnant les arômes et les saveurs que vous préférez.
 
                 Vous pourrez ensuite enregistrer la composition de votre vin dans notre base de données pour le reproduire à tout moment.
-                Vous pourrez également présenter votre vin à notre concours.
+                Vous pourrez également présenter votre vin à notre concours. </p>
 
-                Nos ateliers <span className='inovin'>INOVIN</span> sont conçus pour vous offrir une expérience inoubliable, alliant découverte, apprentissage et convivialité.
-                Vous serez guidé par des experts passionnés et compétents, qui vous feront découvrir les secrets de la création de vin.
-
-                Nous proposons notre atelier <span className='inovin'>INOVIN</span> pour:
-                Des événements d'entreprise, séminaires, événements privés,  passionnés et amateurs ...Souhaitant en apprendre davantage sur l'art de la vinification.
-
-                Nos ateliers <span className='inovin'>INOVIN</span> sont adaptés à tous.
-
-                Alors, prêts à créer votre propre vin ? N'hésitez pas à nous contacter pour en savoir davantage sur notre offre <span className='inovin'>INOVIN</span> !
+                <p>Alors, prêts à créer votre propre vin ?
 
                 L'atelier se réalise par groupe de 5 à 10 personnes.
 

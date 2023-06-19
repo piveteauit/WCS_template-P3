@@ -33,3 +33,15 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+button {
+  width: 10em;
+  padding: 0.5em;
+  background: var(--wine-color);
+  border: none;
+  color: var(--lightest-color);
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  transition: 0.3s ease-out;
+}
+button:hover { background: var(--highlight-color); }

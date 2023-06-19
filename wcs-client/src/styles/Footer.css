@@ -20,11 +20,13 @@
     width: 20em;
     padding: 0.5em;
     margin: 0.5em;
+    border: 1px solid var(--light-color);
+    outline: none;
+    transition: 0.3s ease-out;
 }
-.newsletter-container>button {
-    width: 10em;
-    padding: 0.5em;
-}
+.newsletter-container>input:hover,
+.newsletter-container>input:focus
+    {border: 1px solid var(--wine-color);}
 
 .contact-info-container {
     margin-top: 1em;
@@ -55,4 +57,8 @@
     height: 1.2em;
     width: 1.2em;
     fill: var(--dark-color);
+}
+
+.social-icons-container>a>.social-icon:hover {
+    fill: var(--wine-color);
 }
