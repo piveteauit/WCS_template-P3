@@ -4,9 +4,10 @@
   --title-font: 'Syne', sans-serif;
   --main-font: 'Archivo', sans-serif;
   --lightest-color: #FFF;
-  --light-color: #D9D9D9;
+  --light-color: #f5f5f5;
   --highlight-color: #D6BC44;
-  --dark-color: #000;
+  --dark-color: #202020;
+  --wine-color: #C42727;
 }
 
 *,
@@ -23,16 +24,32 @@ body {
   height: 100%;
   font-size: 16px;
   font-family: var(--main-font);
+  letter-spacing: 0.1em;
 }
 
 h1,
 h2,
 h3 {
   font-family: var(--title-font);
-  /* letter-spacing: 20%; */
+  letter-spacing: 0.2em;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+button {
+  width: 10em;
+  padding: 0.5em;
+  background: var(--wine-color);
+  border: none;
+  color: var(--lightest-color);
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  transition: 0.3s ease-out;
+}
+
+button:hover {
+  background: var(--highlight-color);
 }
