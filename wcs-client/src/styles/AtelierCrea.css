@@ -6,6 +6,7 @@
     align-items: center;
     justify-content: center;
 }
+
 .atelier-crea-page>p {
     margin-bottom: 1em;
     padding: 1em;
@@ -27,7 +28,29 @@
 }
 
 .programme-atelier {
-    margin-bottom: 1em;
+    margin: 3em;
     padding: 1em;
     line-height: 1.2;
+    counter-reset: list-item; 
+}
+
+.programme-atelier>li {
+    position: relative;
+    margin: 1.5em 0;
+    counter-increment: list-item;
+}
+
+.programme-atelier>li::before {
+    content: counter(list-item);
+    display: inline-block;
+    height: 2.625em;
+    width: 2.625em;
+    line-height: 2.435em;
+    text-align: center;
+    border-radius: 50%;
+    border: 2px solid var(--wine-color);
+    position: absolute;
+    left: -3.625em;
+    top: 50%;
+    transform: translateY(-50%);
 }

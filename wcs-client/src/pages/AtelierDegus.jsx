@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';      
 import Footer from '../components/Footer';
 import '../styles/AtelierDegus.css'
@@ -11,7 +12,7 @@ const AtelierDegus = () => {
                 Nos ateliers <span className='inovin'>INOVIN</span> sont conçus pour vous offrir une expérience inoubliable, alliant découverte, apprentissage et convivialité.
                 Vous serez guidé par des experts passionnés et compétents, qui vous feront découvrir les secrets du vin. </p>
                 
-            <button className='inscription-btn'>S'inscrire</button>
+            <Link to="/" className='inscription-btn'>S'inscrire</Link>
             
             <Footer />
         </div>

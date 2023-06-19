@@ -34,7 +34,10 @@ code {
     monospace;
 }
 
-button {
+button,
+.inscription-btn {
+  text-decoration: none;
+  text-align: center;
   width: 10em;
   padding: 0.5em;
   background: var(--wine-color);
@@ -44,4 +47,5 @@ button {
   cursor: pointer;
   transition: 0.3s ease-out;
 }
-button:hover { background: var(--highlight-color); }
+button:hover,
+.inscription-btn:hover { background: var(--highlight-color); }

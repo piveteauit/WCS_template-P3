@@ -53,20 +53,32 @@ const InscriptionForm = () => {
                 
                 <label htmlFor='age'>Age</label>
                 <input type='number' name='age' id='age' min='18' placeholder='Entrez votre âge...' />
-                
+
+                <label htmlFor='phone'>Numéro de téléphone</label>
+                <input type='tel' name='phone' id='phone' placeholder='Entrez votre numéro de téléphone...' />
+
                 <label htmlFor='email'>Adresse mail</label>
                 <input type='email' name='email' id='email' placeholder='Entrez votre adresse mail...' />
                 
+                <label htmlFor='atelier'>Choix de l'atelier</label>
+                <select name='atelier' id='atelier' required>
+                    <option value='' selected disabled hidden>Sélection de l'atelier</option>
+                    <option value='création'>Atelier Création</option>
+                    <option value='dégustation'>Atelier Dégustation</option>
+                </select>
+
                 <label htmlFor='date'>Date d'atelier</label>
                 <input type='date' name='date' id='date' />
                 
-                <label htmlFor='password'>Mot de passe</label>
+                {/* CHAMPS MOT DE PASSE DESACTIVE */}
+               {/*  <label htmlFor='password'>Mot de passe</label>
                 <input type='password' name='password' id='password' placeholder='Choisissez votre mot de passe' onChange={handlePassword} value={password} required/>
                 <p className='password-msg'>{errorMessage}</p>
                 
                 <label htmlFor='same-password'>Confirmation mot de passe</label>
                 <input type='password' name='password' id='same-password' placeholder='Choisissez votre mot de passe' onChange={handleSamePassword} value={samePassword} required/>
-                <p className={samePassword === password ? "same-pwd" : "password-msg"}>Erreur : les mots de passe sont différents</p>
+                <p className={samePassword === password ? "same-pwd" : "password-msg"}>Erreur : les mots de passe sont différents</p> */}
+                <button type='submit'>Valider l'inscription</button>
             </form>
         </div>
         
