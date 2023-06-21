@@ -14,7 +14,7 @@ APIRouter.get('/version', function(req, res) {
 })
 
 APIRouter.use('/users', userRouter);
-APIRouter.use('/movies', movieRouter)
+APIRouter.use('/couleur', couleurRouter)
 
 app.use('/api', APIRouter);
 

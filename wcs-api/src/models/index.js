@@ -1,8 +1,13 @@
-const MovieModel = require("./MovieModel")
-const UserModel = require("./UserModel")
-
+const CouleurModel = require("./CouleurModel");
+const UserModel = require("./UserModel");
+const CepageModel = require("./cepageModel");
+const TerroirModel = require("./terroirModel");
+const RoleModel = require("./roleModel");
 
 module.exports = {
     UserModel,
-    MovieModel,
+    CouleurModel,
+    CepageModel,
+    TerroirModel,
+    RoleModel,
 }
