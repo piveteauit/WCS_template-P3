@@ -58,4 +58,11 @@
     transition: 0.3s ease-out;
 }
 
+.atelier-price>span {
+    text-decoration: line-through;
+    color: var(--dark-color);
+    transition: 0.3s ease-out;
+}
+
 .atelier-card:hover .atelier-price {color: var(--wine-color);}
+.atelier-card:hover .atelier-price>span {color: var(--light-color);}

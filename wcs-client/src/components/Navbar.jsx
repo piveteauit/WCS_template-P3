@@ -20,6 +20,7 @@ const Navbar = () => {
             <div className='logo-container'>
                 <NavLink to="/"><img src={inovin_logo} alt='logo inovin' /></NavLink>
             </div>
+            <NavLink to='/' className={splitLocation[1] === "" ? "active" : ""}>Accueil</NavLink>
             <div className='nav-dropdown' onMouseEnter={toggleDropdown} onMouseLeave={toggleDropdown}>
                 <span>Ateliers <IoMdArrowDropdown /> </span>
                 {dropdownOpen && (
@@ -30,6 +31,7 @@ const Navbar = () => {
                 )}
             </div>
             <NavLink to='/notre-histoire' className={splitLocation[1] === "notre-histoire" ? "active" : ""}>Notre Histoire</NavLink>
+            <NavLink to='/inscription' className={splitLocation[1] === "inscription" ? "active" : ""}>S'inscrire</NavLink>
         </div>
     )
 }

@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import '../styles/AtelierCrea.css'
@@ -25,7 +26,7 @@ const AtelierCrea = () => {
             </p>
 
             <h2><span>Programme</span></h2>
-            <ul className='programme-atelier'>
+            <ol className='programme-atelier'>
                 <li>Accueil des participants</li>
                 <li>
                     45 minutes : présentation et dégustation des quatre mono-cépages soigneusement sélectionnés par nos experts en vin, dans le but de comprendre les différences de goût, d'arôme et de couleur pour chaque variété de raisin
@@ -39,11 +40,11 @@ const AtelierCrea = () => {
                 <li>
                     15 minutes : pour finir, un moment d'échange et de partage où vous serez invités à expliquer votre approche de création de votre assemblage, un moment où vous recevrez aussi la fiche technique de votre vin ainsi que l'enregistrement de votre recette dans notre base de données. 
                 </li>
-            </ul>
+            </ol>
             <p>
                 Nous nous engageons à vous offrir une expérience inoubliable, enrichissante et divertissante lors de cet atelier de deux heures "Crée ton vin <span className='inovin'>INOVIN</span>". Nous vous invitons à vous inscrire dès maintenant pour vivre ce moment unique dans le monde du vin.
             </p>
-            <button className='inscription-btn'>S'inscrire</button>
+            <Link to="/" className='inscription-btn'>S'inscrire</Link>
             <Footer />
         </div>
     )

@@ -1,6 +1,4 @@
 import { Link } from 'react-router-dom';
-import AtelierCrea from '../pages/AtelierCrea';
-import AtelierDegus from '../pages/AtelierDegus';
 import '../styles/Programmes.css'
 
 const Programmes = () => {
@@ -18,7 +16,7 @@ const Programmes = () => {
             <div className='atelier-card'>
                 <div className='card-details'>
                     <h3>Atelier dégustation</h3>
-                    <p className='atelier-price'>50,00 €</p>
+                    <p className='atelier-price'><span>50,00 €</span> 30, 00€</p>
                     <p className='atelier-description'>Atelier dégustation de 4 vins a l'aveugle suivi d'accompagnement de Mets.
                         Vous serez guidé par des experts passionnés et compétents, qui vous feront découvrir les secrets du vin.</p>
                 </div>
