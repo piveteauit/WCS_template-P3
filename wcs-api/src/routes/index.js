@@ -1,11 +1,7 @@
-const couleurRouter = require("./couleurRoutes");
 const userRouter = require("./userRoutes");
-const cepageRouter = require("./cepageRoutes");
-const roleRouter = require("./roleRoutes");
+const tasteRouter = require('./tasteRoutes');
 
 module.exports = {
     userRouter,
-    couleurRouter,
-    cepageRouter,
-    roleRouter,
+    tasteRouter,
 }

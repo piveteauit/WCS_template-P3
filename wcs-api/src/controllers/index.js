@@ -1,13 +1,8 @@
-const CouleurController = require("./CouleurController");
-const UserController = require("./UserController");
-const CepageController = require("./cepageController");
-const TerroirController = require("./terroirController");
-const RoleController = require("./roleController");
+const TasteController = require("./TasteController")
+const UserController = require("./UserController")
+
 
 module.exports = {
     UserController,
-    CouleurController,
-    CepageController,
-    TerroirController,
-    RoleController,
+    TasteController,
 }
