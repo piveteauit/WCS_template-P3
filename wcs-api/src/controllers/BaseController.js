@@ -10,13 +10,15 @@ class BaseController {
     }
 
     getAll() {
-        this.model.getAll()
-            .then(([results]) => this.sendJson(results))
+        // this.model.getAll()
+        //     .then(([results]) => this.sendJson(results))
+        this.sendJson({ ok : "route get all ok"})
     }
 
     getById() {
-        this.model.getById(this.req.params.id)
-            .then(([results]) => this.sendJson(results))
+       const id = this.model.getById(this.req.params.id)
+        //     .then(([results]) => this.sendJson(results))
+        this.sendJson({ ok : "route id ok"})
     }
 
     sendJson(data) {
