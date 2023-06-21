@@ -1,10 +1,10 @@
 const BaseModel = require("./BaseModel");
 
-class CepageModel extends BaseModel {
+class CepagesModel extends BaseModel {
 
     constructor() {
         super('cepages')
     }
 }
 
-module.exports = CepageModel;
+module.exports = CepagesModel;

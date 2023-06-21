@@ -1,21 +1,21 @@
-const { TasteModel } = require("../models");
+const { TastesModel } = require("../models");
 const BaseController = require("./BaseController");
 
-class TasteController extends BaseController {
+class TastesController extends BaseController {
 
     constructor(req, res) {
         super(req, res);
-        this.model = new TasteModel();
+        this.model = new TastesModel();
     }
     
     getById() {
         this.sendJson({ ok : "route by id ok"})
     }
 
-    createTaste() {
+    createTastes() {
         this.sendJson({ok : "route ok"})
     }
 
 }
 
-module.exports = TasteController;
+module.exports = TastesController;

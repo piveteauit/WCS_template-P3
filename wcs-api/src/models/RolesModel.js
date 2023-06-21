@@ -1,10 +1,10 @@
 const BaseModel = require("./BaseModel");
 
-class RoleModel extends BaseModel {
+class RolesModel extends BaseModel {
 
     constructor() {
         super('roles')
     }
 }
 
-module.exports = RoleModelModel;
+module.exports = RolesModel;
