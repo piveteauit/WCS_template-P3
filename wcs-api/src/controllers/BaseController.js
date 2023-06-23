@@ -17,8 +17,8 @@ class BaseController {
 
     getById() {
        const id = this.model.getById(this.req.params.id)
-        //     .then(([results]) => this.sendJson(results))
-        this.sendJson({ ok : "route id ok"})
+            .then(([results]) => this.sendJson(results))
+        // this.sendJson({ ok : "route id ok"})
     }
 
     sendJson(data) {

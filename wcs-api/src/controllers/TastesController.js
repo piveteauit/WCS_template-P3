@@ -8,14 +8,7 @@ class TastesController extends BaseController {
         this.model = new TastesModel();
     }
     
-    getById() {
-        this.sendJson({ ok : "route by id ok"})
     }
 
-    createTastes() {
-        this.sendJson({ok : "route ok"})
-    }
-
-}
 
 module.exports = TastesController;
