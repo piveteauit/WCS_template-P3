@@ -1,7 +1,7 @@
-const TasteModel = require("./TasteModel")
+const TastesModel = require("./TastesModel")
 const UserModel = require("./UserModel")
 
 module.exports = {
     UserModel,
-    TasteModel,
+    TastesModel,
 }

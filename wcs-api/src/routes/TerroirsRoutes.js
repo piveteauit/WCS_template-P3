@@ -1,7 +1,7 @@
 const {Router} = require('express');
-const { TerroirController } = require('../controllers');
+const { TerroirsController } = require('../controllers');
 
-const terroirRouter = Router();
+const terroirsRouter = Router();
 
 terroirRouter.get('', (req, res) => new TerroirController(req, res).getAll());
 terroirRouter.get('/:id', (req, res) => new TerroirController(req, res).getById());

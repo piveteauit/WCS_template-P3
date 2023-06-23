@@ -14,8 +14,8 @@ APIRouter.get('/version', function(req, res) {
     return res.json({ version })
 })
 
-APIRouter.use('/users', userRouter);
-APIRouter.use('/tastes', tasteRouter)
+APIRouter.use('/user', userRouter);
+APIRouter.use('/tastess', tastesRouter)
 
 app.use('/api', APIRouter);
 
