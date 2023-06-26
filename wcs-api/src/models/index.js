@@ -1,8 +1,7 @@
-const MovieModel = require("./MovieModel")
+const TastesModel = require("./TastesModel")
 const UserModel = require("./UserModel")
-
 
 module.exports = {
     UserModel,
-    MovieModel,
+    TastesModel,
 }

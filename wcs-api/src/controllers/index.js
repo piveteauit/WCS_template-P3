@@ -1,7 +1,8 @@
-const MovieController = require("./MovieController")
+const TastesController = require("./TastesController")
 const UserController = require("./UserController")
+
 
 module.exports = {
     UserController,
-    MovieController,
+    TastesController,
 }

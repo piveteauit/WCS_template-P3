@@ -1,7 +1,7 @@
-const movieRouter = require("./movieRoutes");
-const userRouter = require("./userRoutes");
+const userRouter = require("./UserRoutes");
+const tastesRouter = require('./TastesRoutes');
 
 module.exports = {
     userRouter,
-    movieRouter,
+    tastesRouter,
 }
