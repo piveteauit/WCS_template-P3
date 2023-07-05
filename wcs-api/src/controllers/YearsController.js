@@ -1,4 +1,4 @@
-const { ColorsModel } = require("../models");
+const { YearsModel } = require("../models");
 const BaseController = require("./BaseController");
 
 class YearsController extends BaseController {
@@ -7,7 +7,13 @@ class YearsController extends BaseController {
         super(req, res);
         this.model = new YearsModel();
     }
-    
+    getById() {
+        this.sendJson({ ok : "route by id ok"})
+    }
+
+    createTastes() {
+        this.sendJson({ok : "route ok"})
+    }
 
 }
 

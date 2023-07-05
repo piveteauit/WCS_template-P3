@@ -8,6 +8,14 @@ class CepagesController extends BaseController {
         this.model = new CepagesModel();
     }
 
+    getById() {
+        this.sendJson({ ok : "route by id ok"})
+    }
+
+    createTastes() {
+        this.sendJson({ok : "route ok"})
+    }
+
 }
 
 module.exports = CepagesController;

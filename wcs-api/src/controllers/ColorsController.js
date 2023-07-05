@@ -8,6 +8,14 @@ class ColorsController extends BaseController {
         this.model = new ColorsModel();
     }
 
+    getById() {
+        this.sendJson({ ok : "route by id ok"})
+    }
+
+    createTastes() {
+        this.sendJson({ok : "route ok"})
+    }
+
 }
 
 module.exports = ColorsController;

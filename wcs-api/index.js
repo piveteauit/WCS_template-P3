@@ -1,5 +1,5 @@
 const express = require('express');
-const {userRouter, tastesRouter} = require('./src/routes');
+const {userRouter, tastesRouter, yearsRouter} = require('./src/routes');
 const colorsRouter = require('./src/routes/ColorsRoutes');
 const cepagesRouter = require('./src/routes/CepagesRoutes');
 const rolesRouter = require('./src/routes/RolesRoutes');
@@ -24,6 +24,7 @@ APIRouter.use('/colors', colorsRouter);
 APIRouter.use('/cepages', cepagesRouter);
 APIRouter.use('/roles', rolesRouter);
 APIRouter.use('/terroirs', terroirsRouter);
+APIRouter.use('/years', yearsRouter);
 
 
 

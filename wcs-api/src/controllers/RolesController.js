@@ -8,6 +8,14 @@ class RolesController extends BaseController {
         this.model = new RolesModel();
     }
 
+    getById() {
+        this.sendJson({ ok : "route by id ok"})
+    }
+
+    createTastes() {
+        this.sendJson({ok : "route ok"})
+    }
+
 }
 
 module.exports = RolesController;
