@@ -5,6 +5,12 @@ const CepagesRoutes = require("./CepagesRoutes");
 const ColorsRoutes = require("./ColorsRoutes");
 const RolesRoutes = require("./RolesRoutes");
 const TerroirsRoutes = require("./TerroirsRoutes");
+const OperatorsRoutes = require("./OperatorsRoutes");
+const BottlePerCepageRoutes = require("./BottlePerCepageRoutes");
+const TastingSheetRoutes = require("./TastingSheetRoutes");
+const BottleRoutes = require("./BottleRoutes");
+const TastingResultRoutes = require("./TastingResultRoutes");
+const workshopRoutes = require("./WorkshopRoutes");
 
 
 module.exports = {
@@ -14,5 +20,11 @@ module.exports = {
     CepagesRoutes,
     ColorsRoutes,
     RolesRoutes,
-    TerroirsRoutes
+    TerroirsRoutes,
+    OperatorsRoutes,
+    BottlePerCepageRoutes,
+    TastingSheetRoutes,
+    BottleRoutes,
+    TastingResultRoutes,
+    workshopRoutes
 }

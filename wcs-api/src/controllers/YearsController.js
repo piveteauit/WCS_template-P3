@@ -1,4 +1,4 @@
-const { ColorsModel } = require("../models");
+const { YearsModel } = require("../models");
 const BaseController = require("./BaseController");
 
 class YearsController extends BaseController {

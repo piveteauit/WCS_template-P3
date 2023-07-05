@@ -1,11 +1,11 @@
 const { Router } = require("express");
-const { TastesController } = require('../controllers');
+const { TastingSheetController } = require('../controllers');
 
-const tastesRouter = Router();
+const tastingSheetRouter = Router();
 
-tastesRouter.get('', (req, res) => new TastesController(req, res).getAll());
+tastingSheetRouter.get('', (req, res) => new TastingSheetController(req, res).getAll());
 
-tastesRouter.get('/:id', (req, res) => new TastesController(req, res).getById());
+tastingSheetRouter.get('/:id', (req, res) => new TastingSheetController(req, res).getById());
 
 
-module.exports = tastesRouter;
+module.exports = tastingSheetRouter;
