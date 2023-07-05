@@ -6,6 +6,13 @@ const CepagesModel = require("./CepagesModel");
 const ColorsModel = require("./ColorsModel");
 const RolesModel = require("./RolesModel");
 const TerroirsModel = require("./TerroirsModel");
+const OperatorsModel = require("./OperatorsModel");
+const BottlePerCepageModel = require("./BottlePerCepageModel");
+const TastingSheetModel = require("./TastingSheetModel");
+const BottleModel = require("./BottleModel");
+const TastingResultModel = require("./TastingResultModel");
+const WorkshopModel = require("./WorkshopModel");
+const SelectForUserModel = require("./SelectForUserModel");
 
 
 module.exports = {
@@ -16,5 +23,12 @@ module.exports = {
     CepagesModel,
     ColorsModel,
     RolesModel,
-    TerroirsModel
+    TerroirsModel,
+    OperatorsModel,
+    BottlePerCepageModel,
+    TastingSheetModel,
+    BottleModel,
+    TastingResultModel,
+    WorkshopModel,
+    SelectForUserModel
 }

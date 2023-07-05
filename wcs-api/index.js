@@ -1,9 +1,17 @@
 const express = require('express');
-const {userRouter, tastesRouter} = require('./src/routes');
+const userRouter = require('./src/routes/UserRoutes');
+const tastesRouter = require ('./src/routes/TastesRoutes')
 const colorsRouter = require('./src/routes/ColorsRoutes');
 const cepagesRouter = require('./src/routes/CepagesRoutes');
 const rolesRouter = require('./src/routes/RolesRoutes');
 const terroirsRouter = require('./src/routes/TerroirsRoutes');
+const operatorsRouter = require("./src/routes/OperatorsRoutes");
+const bottlePerCepageRouter = require("./src/routes/BottlePerCepageRoutes");
+const tastingSheetRouter = require("./src/routes/TastingSheetRoutes");
+const bottleRouter = require("./src/routes/BottleRoutes");
+const tastingResultRouter = require("./src/routes/TastingResultRoutes");
+const workshopRouter =require("./src/routes/WorkshopRoutes");
+const selectForUserRouter = require("./src/routes/SelectForUserRoutes");
 
 
 
@@ -25,7 +33,13 @@ APIRouter.use('/colors', colorsRouter);
 APIRouter.use('/cepages', cepagesRouter);
 APIRouter.use('/roles', rolesRouter);
 APIRouter.use('/terroirs', terroirsRouter);
-
+APIRouter.use('/operators', operatorsRouter);
+APIRouter.use('/bottlePerCepage', bottlePerCepageRouter);
+APIRouter.use('/tastingSheet', tastingSheetRouter);
+APIRouter.use('/bottle', bottleRouter);
+APIRouter.use('/tastingResult', tastingResultRouter);
+APIRouter.use('/workshop', workshopRouter);
+APIRouter.use('/selectForUser', selectForUserRouter);
 
 
 app.use('/api', APIRouter);
