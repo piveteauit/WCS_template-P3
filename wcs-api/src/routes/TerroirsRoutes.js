@@ -3,8 +3,8 @@ const { TerroirsController } = require('../controllers');
 
 const terroirsRouter = Router();
 
-terroirRouter.get('', (req, res) => new TerroirController(req, res).getAll());
-terroirRouter.get('/:id', (req, res) => new TerroirController(req, res).getById());
+terroirsRouter.get('', (req, res) => new TerroirsController(req, res).getAll());
+terroirsRouter.get('/:id', (req, res) => new TerroirsController(req, res).getById());
 
 
-module.exports = terroirRouter;
+module.exports = terroirsRouter;
