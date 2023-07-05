@@ -44,7 +44,7 @@ const AtelierCrea = () => {
             <p>
                 Nous nous engageons à vous offrir une expérience inoubliable, enrichissante et divertissante lors de cet atelier de deux heures "Crée ton vin <span className='inovin'>INOVIN</span>". Nous vous invitons à vous inscrire dès maintenant pour vivre ce moment unique dans le monde du vin.
             </p>
-            <Link to="/" className='inscription-btn'>S'inscrire</Link>
+            <Link to="/inscription" className='inscription-btn'>S'inscrire</Link>
             <Footer />
         </div>
     )

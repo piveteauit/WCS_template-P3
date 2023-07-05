@@ -67,7 +67,7 @@ const InscriptionForm = () => {
                     <option value='dégustation'>Atelier Dégustation</option>
                 </select>
 
-                <label htmlFor='date'>Date d'atelier</label>
+                <label htmlFor='date'>Date d'atelier préférée</label>
                 <input type='date' name='date' id='date' />
                 
                 {/* CHAMPS MOT DE PASSE DESACTIVE */}
