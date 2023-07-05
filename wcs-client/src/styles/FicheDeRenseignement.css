@@ -98,7 +98,7 @@
 .olfactif>h2>span {
     background-color: var(--lightest-color);
     padding: 0 2em;
-    font-family: var(--title-font);
+    font-family: var(--secondary-title-font);
 }
 
 
@@ -128,7 +128,7 @@
 .gustatif>h2>span {
     background-color: var(--lightest-color);
     padding: 0 2em;
-    font-family: var(--title-font);
+    font-family: var(--secondary-title-font);
 }
 
 .olfactif-toggle-container-intensity-taste {
