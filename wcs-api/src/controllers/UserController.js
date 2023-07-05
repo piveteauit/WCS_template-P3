@@ -9,22 +9,21 @@ class UserController extends BaseController {
     }
 
     createUser() {
-        this.sendJson({ ok : "route ok"})
-        const { name, email } = req.body;
-        // CHECK EMAIL AND NAME //
-        if(!name || !email) {
-            this.res.status(400).send ({ error : "Please specify both name and email"})
-        return;
+        // this.sendJson({ ok : "route ok"})
+        const { date, name, age, mail, password } = this.req.body;
+        // CHECK NAME AND AGE //
+        if(!name || !age) {
+            return this.res.status(400).send ({ error : "Please specify both your name and your age"})
         }
 
-        UserModel.users
-            .insert ({ name, email})
-            .then(([result]) => {
-                this.res.status(201).send({ id: result.insertId, name, email})
+        this.model
+            .insert ({ date, name, age, mail, password })
+            .then((result) => {
+               return this.res.status(201).send({ id: result.insertId, date, name, age, mail, password })
             })
             .catch((err) => {
                 console.error(err);
-                this.res.status(500).send({
+                return this.res.status(500).send({
                     error: err.message,
                 });
             });

@@ -1,0 +1,191 @@
+.checkbox-container {
+    width: 100%;
+    height: 10vh;
+    background: #fff;
+    display: flex;
+
+    justify-content: space-between;
+}
+
+.button {
+    background: #d2d2d2;
+    width: 40px;
+    height: 20px;
+    border-radius: 200px;
+    cursor: pointer;
+    position: relative;
+    transition: .3s ease-in-out;
+}
+
+.button::before {
+    content: "";
+    position: absolute;
+    background: #fff;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    margin: 2px;
+    transition: .3s ease-in-out;
+}
+
+input:checked+.button {
+    background: #811111;
+}
+
+input:checked+.button::before {
+    transform: translateX(20px);
+}
+
+input {
+    display: none;
+}
+
+.vin-container {
+    display: grid;
+    grid-template-columns: 50%50%;
+    padding: 1em;
+    height: 10vh;
+}
+
+.vin-container .checkbox-container {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.vin-container :nth-child(1) {
+    margin: 3em 0 0 6em;
+}
+
+.vin-container :nth-child(2) {
+    margin: 1.5em 6em 0 0;
+}
+
+
+
+.FicheDeRenseignement-container h1 {
+    width: 30%;
+    text-align: center;
+    margin: 0 auto;
+
+}
+
+.FicheDeRenseignement-container p {
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+
+.olfactif {
+    width: 100%;
+    padding: 2em;
+}
+
+.olfactif p {
+    letter-spacing: 2px;
+}
+
+.olfactif>h2 {
+
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid var(--dark-color);
+    line-height: 0.1em;
+    margin: 0.625em 0 1.25em;
+
+}
+
+
+.olfactif>h2>span {
+    background-color: var(--lightest-color);
+    padding: 0 2em;
+    font-family: var(--title-font);
+}
+
+
+.olfactif h3 {
+    margin: 3em 0 1em 3em;
+    font-weight: 100;
+    font-size: 1rem;
+}
+
+.olfactif-toggle-container-intensity {
+    padding: 4.5em 4.5em 1em 4.5em;
+}
+
+.olfactif-toggle-container-aromes {
+    padding: 3.5em 4.5em 1em 4.5em;
+}
+
+
+.gustatif>h2 {
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid var(--dark-color);
+    line-height: 0.1em;
+    margin: 0.625em 0 1.25em;
+}
+
+.gustatif>h2>span {
+    background-color: var(--lightest-color);
+    padding: 0 2em;
+    font-family: var(--title-font);
+}
+
+.olfactif-toggle-container-intensity-taste {
+    padding: 4.5em 4.5em 1em 4.5em;
+}
+
+.olfactif-toggle-container-taste {
+    padding: 4.5em 4.5em 1em 4.5em;
+}
+
+
+.form-infos-complementaires {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 3em;
+    flex-direction: column;
+}
+
+.form-infos-complementaires textarea {
+    height: 40vh;
+    width: 600px;
+    resize: none;
+    outline: none;
+    background: #f5f4f4;
+    padding: 1em;
+    text-align: center;
+    border: #f5f4f4;
+    font-family: Archivo;
+}
+
+.form-infos-complementaires button {
+    margin-top: 5em;
+    background: none;
+    color: black;
+    border: 1px solid #000;
+    position: relative;
+}
+
+.form-infos-complementaires button::before {
+    content: "";
+    position: absolute;
+    left: -100%;
+    bottom: 50%;
+    width: 100%;
+    height: 1px;
+    background-color: black;
+
+}
+
+.form-infos-complementaires button::after {
+    content: "";
+    position: absolute;
+    right: -100%;
+    bottom: 50%;
+    width: 100%;
+    height: 1px;
+    background-color: black;
+
+}
