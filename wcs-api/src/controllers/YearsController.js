@@ -11,7 +11,7 @@ class YearsController extends BaseController {
         this.sendJson({ ok : "route by id ok"})
     }
 
-    createTastes() {
+    createYears() {
         this.sendJson({ok : "route ok"})
     }
 
