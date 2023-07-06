@@ -24,11 +24,11 @@
 .atelier-crea-page>h2>span {
     background-color: var(--lightest-color);
     padding: 0 2em;
-    font-family: var(--title-font);
+    font-family: var(--secondary-title-font);
 }
 
 .programme-atelier {
-    margin: 3em;
+    margin: 1em 3em 1em 5em;
     padding: 1em;
     line-height: 1.2;
     counter-reset: list-item; 

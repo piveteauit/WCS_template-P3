@@ -12,7 +12,7 @@ const AtelierDegus = () => {
                 Nos ateliers <span className='inovin'>INOVIN</span> sont conçus pour vous offrir une expérience inoubliable, alliant découverte, apprentissage et convivialité.
                 Vous serez guidé par des experts passionnés et compétents, qui vous feront découvrir les secrets du vin. </p>
                 
-            <Link to="/" className='inscription-btn'>S'inscrire</Link>
+            <Link to="/inscription" className='inscription-btn'>S'inscrire</Link>
             
             <Footer />
         </div>
