@@ -30,7 +30,39 @@ class UserController extends BaseController {
       
     }
 
-    
-}
+    updateUser() {
+        const { date, name, age, mail, password } = this.req.body;
+        console.log(this.req.body);
+      
+        this.model.updateUser ({ date, name, age, mail, password })
+          .then(([result]) => {
+            if (result.affectedRows === 0) {
+              this.res.status(404).send("Not Found");
+            } else {
+              this.res.sendStatus(204);
+            }
+          })
+          .catch((err) => {
+            this.res.status(500).send("Error updating the user");
+          });
+      }
+
+    deleteUser() {
+
+        this.model.deleteUser(id)
+            .then(([result]) => {
+                if (result.affectedRows === 0) {
+                    this.res.status(404).send("Not Found");
+                } else {
+                    this.res.sendStatus(204);
+                }
+            })
+            .catch((err) => {
+                this.res.status(500).send("Error deleting the user");
+            });
+    }
+
+};
+
 
 module.exports = UserController;

@@ -7,11 +7,6 @@
     align-items: center;
 }
 
-.inscription-page>h1 {
-    margin: 1em;
-    letter-spacing: 0.2em;
-}
-
 .inscription-form {
     width: 100%;
     height: 100%;

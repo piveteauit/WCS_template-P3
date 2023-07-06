@@ -28,15 +28,15 @@
     transition: .3s ease-in-out;
 }
 
-input:checked+.button {
+.checkbox-container>input:checked+.button {
     background: #811111;
 }
 
-input:checked+.button::before {
+.checkbox-container>input:checked+.button::before {
     transform: translateX(20px);
 }
 
-input {
+.checkbox-container>input {
     display: none;
 }
 
@@ -98,7 +98,7 @@ input {
 .olfactif>h2>span {
     background-color: var(--lightest-color);
     padding: 0 2em;
-    font-family: var(--title-font);
+    font-family: var(--secondary-title-font);
 }
 
 
@@ -128,7 +128,7 @@ input {
 .gustatif>h2>span {
     background-color: var(--lightest-color);
     padding: 0 2em;
-    font-family: var(--title-font);
+    font-family: var(--secondary-title-font);
 }
 
 .olfactif-toggle-container-intensity-taste {
