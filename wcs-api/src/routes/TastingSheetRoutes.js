@@ -1,5 +1,5 @@
 const { Router } = require("express");
-const { TastesController } = require('../controllers');
+const { TastingSheetController } = require('../controllers');
 
 const tastesRouter = Router();
 

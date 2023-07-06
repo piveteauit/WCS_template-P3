@@ -8,6 +8,14 @@ class BottlePerCepageController extends BaseController {
         this.model = new BottlePerCepageModel();
     }
 
+    getById() {
+        this.sendJson({ ok : "route by id ok"})
+    }
+
+    createBottlePerCepageController() {
+        this.sendJson({ok : "route ok"})
+    }
+
 }
 
 module.exports = BottlePerCepageController;
