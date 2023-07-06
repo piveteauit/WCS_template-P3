@@ -5,6 +5,13 @@ const colorsRouter = require('./src/routes/ColorsRoutes');
 const cepagesRouter = require('./src/routes/CepagesRoutes');
 const rolesRouter = require('./src/routes/RolesRoutes');
 const terroirsRouter = require('./src/routes/TerroirsRoutes');
+const operatorsRouter = require("./src/routes/OperatorsRoutes");
+const bottlePerCepageRouter = require("./src/routes/BottlePerCepageRoutes");
+const tastingSheetRouter = require("./src/routes/TastingSheetRoutes");
+const bottleRouter = require("./src/routes/BottleRoutes");
+const tastingResultRouter = require("./src/routes/TastingResultRoutes");
+const workshopRouter =require("./src/routes/WorkshopRoutes");
+const selectForUserRouter = require("./src/routes/SelectForUserRoutes");
 
 
 const app = express();
@@ -26,6 +33,8 @@ APIRouter.use('/colors', colorsRouter);
 APIRouter.use('/cepages', cepagesRouter);
 APIRouter.use('/roles', rolesRouter);
 APIRouter.use('/terroirs', terroirsRouter);
+
+
 
 app.use('/api', APIRouter);
 
