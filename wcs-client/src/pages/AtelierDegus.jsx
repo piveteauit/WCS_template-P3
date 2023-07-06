@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
-import Navbar from '../components/Navbar';      
+import Navbar from '../components/Navbar';
+import MenuBurger from '../components/MenuBurger';      
 import Footer from '../components/Footer';
 import '../styles/AtelierDegus.css'
 
@@ -7,6 +8,8 @@ const AtelierDegus = () => {
     return (
         <div className='atelier-degus-page'>
             <Navbar />
+            <MenuBurger />
+
             <h1>Atelier Dégustation</h1>
             <p>Atelier dégustation de 4 vins a l'aveugle suivi d'accompagnement de Mets .
                 Nos ateliers <span className='inovin'>INOVIN</span> sont conçus pour vous offrir une expérience inoubliable, alliant découverte, apprentissage et convivialité.

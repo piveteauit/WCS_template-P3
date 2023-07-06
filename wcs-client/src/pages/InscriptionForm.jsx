@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Navbar from '../components/Navbar';
+import MenuBurger from '../components/MenuBurger';
 import '../styles/InscriptionForm.css';
 
 const InscriptionForm = () => {
@@ -43,6 +44,8 @@ const InscriptionForm = () => {
     return (
         <div className='inscription-page'>
             <Navbar />
+            <MenuBurger />
+
             <h1>Inscription</h1>
             <form className='inscription-form'>
                 <label htmlFor='last-name'>Nom</label>
