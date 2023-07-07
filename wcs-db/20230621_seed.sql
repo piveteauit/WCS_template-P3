@@ -12,3 +12,9 @@ VALUES (
 
 INSERT INTO terroirs (name)
 VALUES ('Sud-Ouest'), ('Sud-Est'), ('Nord-Ouest'), ('Nord-Est');
+
+INSERT INTO intensity (name)
+VALUES ('Faible'), ('Moyen'), ('Fort');
+
+INSERT INTO aromas (name)
+VALUES ('Fruité'), ('Floral'), ('Epicé'), ('Boisé'), ('Acide'), ('Doux'), ('Tanique'), ('Equilibré'), ('Long en bouche');
