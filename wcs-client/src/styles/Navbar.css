@@ -79,8 +79,10 @@
 .navbar-container>a:hover,
 .nav-dropdown:hover,
 .navbar-container>a.active,
-.nav-ateliers>a.active {
+.nav-ateliers>a.active,
+.navbar-container>a.active .panier-icon  {
     color: var(--highlight-color);
+    fill: var(--highlight-color);
 }
 
 @media screen and (max-width: 860px) {

@@ -4,6 +4,7 @@ import AtelierCrea from './pages/AtelierCrea';
 import AtelierDegus from './pages/AtelierDegus';
 import NotreHistoire from './pages/NotreHistoire';
 import InscriptionForm from './pages/InscriptionForm';
+import Panier from './pages/Panier';
 import './App.css';
 import FicheDeRenseignement from './pages/FicheDeRenseignement';
 import Toggletest from './pages/Toggletest';
@@ -23,6 +24,7 @@ function App() {
         <Route path="/atelier-degustation" element={<AtelierDegus />} />
         <Route path="/notre-histoire" element={<NotreHistoire />} />
         <Route path="/inscription" element={<InscriptionForm />} />
+        <Route path='/panier' element={<Panier />} />
       </Routes>
     </Router>
   );

@@ -27,6 +27,7 @@ body {
   font-size: 16px;
   font-family: var(--main-font);
   letter-spacing: 0.1em;
+  user-select: none;
 }
 
 body::-webkit-scrollbar {display: none;}
@@ -36,6 +37,7 @@ h1 {
   text-transform: uppercase;
   color: var(--highlight-color);
   margin-bottom: 1.5em;
+  text-align: center;
 }
 
 h2,
