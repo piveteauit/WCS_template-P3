@@ -1,6 +1,7 @@
 import { NavLink, useLocation } from 'react-router-dom';
 import { useState } from 'react';
-import { IoMdArrowDropdown } from 'react-icons/io'
+import { IoMdArrowDropdown } from 'react-icons/io';
+import { BsCart } from 'react-icons/bs';
 import inovin_logo from '../assets/logo_inovin_blanc.png'
 import '../styles/Navbar.css';
 
@@ -32,6 +33,7 @@ const Navbar = () => {
             </div>
             <NavLink to='/notre-histoire' className={splitLocation[1] === "notre-histoire" ? "active" : ""}>Notre Histoire</NavLink>
             <NavLink to='/inscription' className={splitLocation[1] === "inscription" ? "active" : ""}>S'inscrire</NavLink>
+            <NavLink to="/panier" className={splitLocation[1] === "panier" ? "active" : ""}><BsCart className='panier-icon' /></NavLink>
         </div>
     )
 }
