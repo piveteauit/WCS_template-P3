@@ -34,7 +34,7 @@ const FicheDeRenseignement = () => {
 
                 <div className='olfactif'>
                     <h2><span>OLFACTIF</span></h2>
-                    <h3>Intensitée</h3>
+                    <h3>Intensité</h3>
                     <div className="olfactif-toggle-container-intensity">
 
                         <div className="checkbox-container">
