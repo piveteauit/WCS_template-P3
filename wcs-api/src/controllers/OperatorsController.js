@@ -1,5 +1,5 @@
 const { OperatorsModel } = require("../models");
-const OperatorsController = require("./BaseController");
+const BaseController = require("./BaseController");
 
 class OperatorsController extends BaseController {
 

@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const express = require('express');
 const userRouter = require('./src/routes/UserRoutes');
 const tastesRouter = require ('./src/routes/TastesRoutes')
@@ -14,7 +16,7 @@ const workshopRouter =require("./src/routes/WorkshopRoutes");
 const selectForUserRouter = require("./src/routes/SelectForUserRoutes");
 
 
-
+const port = process.env.APP_PORT || 8080;
 const app = express();
 
 app.use(express.json());
@@ -27,7 +29,7 @@ APIRouter.get('/version', function(req, res) {
     return res.json({ version })
 })
 
-APIRouter.use('/user', userRouter);
+APIRouter.use('/users', userRouter);
 APIRouter.use('/tastes', tastesRouter);
 APIRouter.use('/colors', colorsRouter);
 APIRouter.use('/cepages', cepagesRouter);
@@ -44,6 +46,6 @@ APIRouter.use('/selectForUser', selectForUserRouter);
 
 app.use('/api', APIRouter);
 
-app.listen(8080, function() {
-    console.log('API is running on 8080')
+app.listen(port, function() {
+    console.log('API is running on %s', port)
 })

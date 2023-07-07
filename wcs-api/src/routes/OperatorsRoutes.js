@@ -3,8 +3,8 @@ const { OperatorsController } = require('../controllers');
 
 const OperatorsRouter = Router();
 
-operatorsRouter.get('', (req, res) => new OperatorsController(req, res).getAll());
-operatorsRouter.get('/:id', (req, res) => new OperatorsController(req, res).getById());
+OperatorsRouter.get('', (req, res) => new OperatorsController(req, res).getAll());
+OperatorsRouter.get('/:id', (req, res) => new OperatorsController(req, res).getById());
 
 
 module.exports = OperatorsRouter;
