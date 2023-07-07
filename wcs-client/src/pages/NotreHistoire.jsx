@@ -1,4 +1,5 @@
-import Navbar from '../components/Navbar';      
+import Navbar from '../components/Navbar';  
+import MenuBurger from '../components/MenuBurger';    
 import Footer from '../components/Footer';
 import Programmes from '../components/Programmes';
 import '../styles/NotreHistoire.css'
@@ -7,6 +8,8 @@ const NotreHistoire = () => {
     return (
         <div className='histoire-page'>
             <Navbar />
+            <MenuBurger />
+
             <h1>Notre histoire</h1>
             <div className='histoire-container'>
                 <h2><span>Notre concept</span></h2>

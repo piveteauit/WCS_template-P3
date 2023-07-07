@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
+import MenuBurger from '../components/MenuBurger';
 import Footer from '../components/Footer';
 import '../styles/AtelierCrea.css'
 
@@ -7,6 +8,8 @@ const AtelierCrea = () => {
     return (
         <div className='atelier-crea-page'>
             <Navbar />
+            <MenuBurger />
+
             <h1>Atelier Création</h1>
             <p>Atelier <span className='inovin'>INOVIN</span> pour créer votre propre vin personnalisé.
 

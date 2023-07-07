@@ -29,6 +29,8 @@ body {
   letter-spacing: 0.1em;
 }
 
+body::-webkit-scrollbar {display: none;}
+
 h1 { 
   font-family: var(--title-font);
   text-transform: uppercase;
@@ -63,4 +65,9 @@ button,
 
 button:hover,
 .inscription-btn:hover { background: var(--highlight-color); }
+
+
+
+
+
 
