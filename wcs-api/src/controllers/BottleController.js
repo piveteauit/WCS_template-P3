@@ -1,4 +1,4 @@
-const { BottleModel} = require("../models");
+const { BottleModel } = require("../models");
 const BaseController = require("./BaseController");
 
 class BottleController extends BaseController {

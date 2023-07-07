@@ -6,3 +6,7 @@ flex-direction: column;
 justify-content: space-around;
 align-items: center;
 }
+
+.home-page>p {
+    padding: 1em;
+}

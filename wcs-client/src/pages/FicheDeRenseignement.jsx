@@ -1,5 +1,6 @@
 import { useParams } from 'react-router-dom'
 import Navbar from '../components/Navbar'
+import MenuBurger from '../components/MenuBurger'
 import '../styles/FicheDeRenseignement.css'
 
 const FicheDeRenseignement = () => {
@@ -10,6 +11,8 @@ const FicheDeRenseignement = () => {
     return (
         <div>
             <Navbar />
+            <MenuBurger />
+
             <div className='FicheDeRenseignement-container'>
 
                 <h1>FICHE DE RENSEIGNEMENT</h1>

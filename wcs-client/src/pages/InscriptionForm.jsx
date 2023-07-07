@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Navbar from '../components/Navbar';
+import MenuBurger from '../components/MenuBurger';
 import '../styles/InscriptionForm.css';
 import { postUser } from '../services';
 import { useNavigate } from 'react-router-dom';
@@ -42,6 +43,8 @@ const InscriptionForm = () => {
     return (
         <div className='inscription-page'>
             <Navbar />
+            <MenuBurger />
+
             <h1>Inscription</h1>
             <form onSubmit={onSubmit} className='inscription-form'>
                 <label htmlFor='last-name'>Nom</label>

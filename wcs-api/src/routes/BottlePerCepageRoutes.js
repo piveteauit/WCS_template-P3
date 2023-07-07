@@ -1,10 +1,11 @@
 const {Router} = require('express');
 const { BottlePerCepageController } = require('../controllers');
 
-const BottlePerCepageRouter = Router();
+const bottlePerCepageRouter = Router();
 
-BottlePerCepageRouter.get('', (req, res) => new BottlePerCepageController(req, res).getAll());
-BottlePerCepageRouter.get('/:id', (req, res) => new BottlePerCepageController(req, res).getById());
+bottlePerCepageRouter.get('', (req, res) => new BottlePerCepageController(req, res).getAll());
+bottlePerCepageRouter.get('/:id', (req, res) => new BottlePerCepageController(req, res).getById());
 
 
-module.exports = BottlePerCepageRouter;
+module.exports = bottlePerCepageRouter;
+
