@@ -13,7 +13,7 @@ class UserController extends BaseController {
         const { date, firstname, lastname, age, mail, password } = this.req.body;
         // CHECK NAME AND AGE //
         if(!firstname || !age) {
-            return this.res.status(400).send ({ error : "Please specify both your name and your age"})
+            return this.res.status(400).send ({ error : "Please specify both your name and your age"});
         }
 
         this.model
