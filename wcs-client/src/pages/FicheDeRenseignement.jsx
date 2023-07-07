@@ -1,9 +1,13 @@
-
+import { useParams } from 'react-router-dom'
 import Navbar from '../components/Navbar'
 import MenuBurger from '../components/MenuBurger'
 import '../styles/FicheDeRenseignement.css'
 
 const FicheDeRenseignement = () => {
+    const params = useParams()
+    console.log(params)
+
+
     return (
         <div>
             <Navbar />
