@@ -23,7 +23,12 @@
     padding: 0.5em;
 }
 
-.password-msg { 
+.inscription-form>button {
+    width: 15em;
+}
+
+.error-msg { 
+    margin-bottom: 1em;
     font-size: 0.8em;
     color: red; 
 }
