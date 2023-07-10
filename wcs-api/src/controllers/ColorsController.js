@@ -8,7 +8,7 @@ class ColorsController extends BaseController {
         this.model = new ColorsModel();
     }
     createColors() {
-        // this.sendJson({ ok : "route ok"})
+        this.sendJson({ ok : "route ok"})
         const { name } = this.req.body;
 
         this.model
