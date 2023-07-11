@@ -84,13 +84,23 @@ const InscriptionForm = () => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    postUser(formValues)
-      .then(function (result) {
-        navigate(`ficheDeRenseignement/${result.id}`);
-      })
-      .catch(function (err) {
-        alert(err.message);
-      });
+    if (password === samePassword && isAgeValid && formValues.age) {
+      postUser(formValues)
+        .then(function (result) {
+          navigate(`ficheDeRenseignement/${result.id}`);
+        }) 
+        .catch(function (err) {
+          alert(err.message);
+        });
+    } else if(!isAgeValid && formValues.age) {
+      alert('Inscription refusée : vous devez être majeur pour vous inscrire.')
+    } else if(password !== samePassword) {
+      alert('Veuillez entrer les mêmes mots de passe avant de poursuivre.')
+    }
+      else {
+      alert('Veuillez remplir correctement les champs')
+    }
+    
   };
 
   useEffect(() => {
@@ -117,6 +127,7 @@ const InscriptionForm = () => {
           name="lastname"
           id="last-name"
           placeholder="Entrez votre nom..."
+          required
         />
 
         <label htmlFor="first-name">Prénom</label>
@@ -126,6 +137,7 @@ const InscriptionForm = () => {
           name="firstname"
           id="first-name"
           placeholder="Entrez votre prénom..."
+          required
         />
 
         <label htmlFor="age">Age</label>
@@ -135,6 +147,7 @@ const InscriptionForm = () => {
           name="age"
           id="age"
           placeholder="Sélectionner votre date de naissance..."
+          required
           />
           {!isAgeValid && formValues.age && (
             <p className='error-msg'>Vous devez avoir au moins 18 ans pour participer.</p>
@@ -147,6 +160,7 @@ const InscriptionForm = () => {
           name="phone"
           id="phone"
           placeholder="Entrez votre numéro de téléphone..."
+          required 
         />
 
         <label htmlFor="email">Adresse mail</label>
@@ -156,11 +170,12 @@ const InscriptionForm = () => {
           name="mail"
           id="email"
           placeholder="Entrez votre adresse mail..."
+          required
         />
 
         <label htmlFor="atelier">Choix de l'atelier</label>
         <select onChange={onChange} name="atelier" id="atelier" required>
-          <option value="" disabled hidden>
+          <option value="" hidden>
             Sélection de l'atelier
           </option>
           <option value="création">Atelier Création</option>
