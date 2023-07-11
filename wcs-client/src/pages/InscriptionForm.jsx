@@ -3,7 +3,7 @@ import Navbar from '../components/Navbar';
 import MenuBurger from '../components/MenuBurger';
 import '../styles/InscriptionForm.css';
 import { postUser } from '../services';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate,  } from 'react-router-dom';
 
 function calculateAge(birthdate) {
   const today = new Date();
@@ -101,6 +101,7 @@ const InscriptionForm = () => {
       alert('Veuillez remplir correctement les champs')
     }
     
+    navigate('/renseignement');
   };
 
   useEffect(() => {
