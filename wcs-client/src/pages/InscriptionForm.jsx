@@ -87,7 +87,7 @@ const InscriptionForm = () => {
     if (password === samePassword && isAgeValid && formValues.age) {
       postUser(formValues)
         .then(function (result) {
-          navigate(`ficheDeRenseignement/${result.id}`);
+          navigate(`/renseignement`);
         }) 
         .catch(function (err) {
           alert(err.message);
@@ -100,8 +100,6 @@ const InscriptionForm = () => {
       else {
       alert('Veuillez remplir correctement les champs')
     }
-    
-    navigate('/renseignement');
   };
 
   useEffect(() => {
