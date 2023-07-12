@@ -1,9 +1,48 @@
+.renseignement-page {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;   
+    justify-content: center;
+    flex-direction: column;
+}
+
+.renseignement-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.vins-container, .olfactif, .gustatif {
+    width: 100%;
+    padding: 2em;
+}
+.vins-container>h2,
+.olfactif>h2,
+.gustatif>h2 {
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid var(--dark-color);
+    line-height: 0.1em;
+    margin: 0.625em 0 1.25em;
+}
+
+.vins-container>h2>span,
+.olfactif>h2>span,
+.gustatif>h2>span {
+    text-transform: uppercase;
+    background-color: var(--lightest-color);
+    padding: 0 2em;
+    font-family: var(--secondary-title-font);
+}
 .checkbox-container {
     width: 100%;
-    height: 10vh;
+    height: 5em;
     background: #fff;
     display: flex;
-
+    align-items: center;
     justify-content: space-between;
 }
 
@@ -40,6 +79,10 @@
     display: none;
 }
 
+.vins-container {
+    width: 100%;
+}
+
 .vin-container {
     display: grid;
     grid-template-columns: 50%50%;
@@ -60,115 +103,58 @@
     margin: 1.5em 6em 0 0;
 }
 
-
-
-.FicheDeRenseignement-container h1 {
-    width: 30%;
-    text-align: center;
-    margin: 0 auto;
-
-}
-
-.FicheDeRenseignement-container p {
+.vin-container>p {
     letter-spacing: 2px;
     text-transform: uppercase;
 }
 
-
-.olfactif {
-    width: 100%;
-    padding: 2em;
-}
-
-.olfactif p {
-    letter-spacing: 2px;
-}
-
-.olfactif>h2 {
-
-    width: 100%;
-    text-align: center;
-    border-bottom: 1px solid var(--dark-color);
-    line-height: 0.1em;
-    margin: 0.625em 0 1.25em;
-
-}
-
-
-.olfactif>h2>span {
-    background-color: var(--lightest-color);
-    padding: 0 2em;
-    font-family: var(--secondary-title-font);
-}
-
-
-.olfactif h3 {
-    margin: 3em 0 1em 3em;
+.olfactif>h3,
+.gustatif>h3 {
+    margin: 2em 0 1em 2em;
     font-weight: 100;
-    font-size: 1rem;
+    color: var(--highlight-color);
 }
 
-.olfactif-toggle-container-intensity {
-    padding: 4.5em 4.5em 1em 4.5em;
+.olfactif-toggle-container-intensity,
+.olfactif-toggle-container-aromes, 
+.olfactif-toggle-container-intensity-taste,
+.olfactif-toggle-container-taste
+{
+    padding: 2.5em 4.5em 1em 4.5em;
 }
-
-.olfactif-toggle-container-aromes {
-    padding: 3.5em 4.5em 1em 4.5em;
-}
-
-
-.gustatif>h2 {
-    width: 100%;
-    text-align: center;
-    border-bottom: 1px solid var(--dark-color);
-    line-height: 0.1em;
-    margin: 0.625em 0 1.25em;
-}
-
-.gustatif>h2>span {
-    background-color: var(--lightest-color);
-    padding: 0 2em;
-    font-family: var(--secondary-title-font);
-}
-
-.olfactif-toggle-container-intensity-taste {
-    padding: 4.5em 4.5em 1em 4.5em;
-}
-
-.olfactif-toggle-container-taste {
-    padding: 4.5em 4.5em 1em 4.5em;
-}
-
 
 .form-infos-complementaires {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 3em;
+    margin: 0 3em 3em 3em;
     flex-direction: column;
 }
+.form-infos-complementaires>label {
+    margin: 1em;
+    align-self: flex-start;
+}
 
-.form-infos-complementaires textarea {
+.form-infos-complementaires>textarea {
     height: 40vh;
-    width: 600px;
+    width: 50em;
     resize: none;
     outline: none;
     background: #f5f4f4;
     padding: 1em;
-    text-align: center;
     border: #f5f4f4;
     font-family: Archivo;
 }
 
-.form-infos-complementaires button {
-    margin-top: 5em;
+.renseignement-container>button {
+    margin: 2em;
     background: none;
     color: black;
-    border: 1px solid #000;
+    border: 1px solid var(--dark-color);
     position: relative;
 }
 
-.form-infos-complementaires button::before {
+.renseignement-container>button::before {
     content: "";
     position: absolute;
     left: -100%;
@@ -178,8 +164,7 @@
     background-color: black;
 
 }
-
-.form-infos-complementaires button::after {
+.renseignement-container>button::after {
     content: "";
     position: absolute;
     right: -100%;
@@ -187,5 +172,10 @@
     width: 100%;
     height: 1px;
     background-color: black;
-
 }
+.renseignement-container>button:hover {
+    background-color: var(--highlight-color);
+    color: var(--lightest-color);
+}
+
+

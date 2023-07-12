@@ -3,7 +3,7 @@ import Navbar from '../components/Navbar';
 import MenuBurger from '../components/MenuBurger';
 import '../styles/InscriptionForm.css';
 import { postUser } from '../services';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate,  } from 'react-router-dom';
 
 function calculateAge(birthdate) {
   const today = new Date();
@@ -22,6 +22,7 @@ const InscriptionForm = () => {
   const [isAgeValid, setIsAgeValid] = useState(false);
   const [password, setPassword] = useState('');
   const [samePassword, setSamePassword] = useState('');
+  const [totalPrice, setTotalPrice] = useState('');
 
   const [formValues, setFormValues] = useState({
     firstname: '',
@@ -73,6 +74,9 @@ const InscriptionForm = () => {
       [e.target.name]: e.target.value,
     });
 
+    if (e.target.name === 'atelier') {
+      handlePrice()
+    }
     if (e.target.name === 'password') {
       handlePassword(e);
     }
@@ -82,12 +86,20 @@ const InscriptionForm = () => {
     }
   };
 
+  const handlePrice = () => {
+    if(formValues.atelier === "dégustation") {
+      setTotalPrice('70 €')
+    } else {
+      setTotalPrice('30 €')
+    }
+  }
+
   const onSubmit = (e) => {
     e.preventDefault();
     if (password === samePassword && isAgeValid && formValues.age) {
       postUser(formValues)
         .then(function (result) {
-          navigate(`ficheDeRenseignement/${result.id}`);
+          navigate(`/renseignement`);
         }) 
         .catch(function (err) {
           alert(err.message);
@@ -100,7 +112,6 @@ const InscriptionForm = () => {
       else {
       alert('Veuillez remplir correctement les champs')
     }
-    
   };
 
   useEffect(() => {
@@ -194,7 +205,7 @@ const InscriptionForm = () => {
           onChange={onChange}
           value={formValues.password}
           required
-        />
+          />
         <p className="error-msg">{errorMessage}</p>
 
         <label htmlFor="same-password">Confirmation mot de passe</label>
@@ -206,10 +217,11 @@ const InscriptionForm = () => {
           onChange={onChange}
           value={formValues.samepassword}
           required
-        />
+          />
         <p className={formValues.samepassword === formValues.password ? "same-pwd" : "error-msg"}>
           Erreur : les mots de passe sont différents
         </p>
+        <h2>Montant : <span>{totalPrice}</span></h2>
         <button type="submit">Valider l'inscription</button>
       </form>
     </div>

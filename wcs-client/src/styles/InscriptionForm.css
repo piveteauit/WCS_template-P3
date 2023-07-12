@@ -23,6 +23,12 @@
     padding: 0.5em;
 }
 
+.inscription-form>h2 {
+    margin: 1em;
+}
+.inscription-form>h2>span {
+    color: var(--highlight-color);
+}
 .inscription-form>button {
     width: 15em;
 }
