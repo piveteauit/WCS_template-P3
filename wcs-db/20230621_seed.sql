@@ -17,4 +17,8 @@ INSERT INTO intensity (name)
 VALUES ('Faible'), ('Moyen'), ('Fort');
 
 INSERT INTO aromas (name)
-VALUES ('Fruité'), ('Floral'), ('Epicé'), ('Boisé'), ('Acide'), ('Doux'), ('Tanique'), ('Equilibré'), ('Long en bouche');
+VALUES ('Fruité'), ('Floral'), ('Epicé'), ('Boisé');
+
+INSERT INTO flavors (name)
+VALUES ('Acide'), ('Doux'), ('Tanique'), ('Equilibré'), ('Long en bouche');
+
