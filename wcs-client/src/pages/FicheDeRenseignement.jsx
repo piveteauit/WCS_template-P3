@@ -17,7 +17,7 @@ const initialValues = {
     comment : ""
 }
 
-const formError = { 
+const errorMessage = { 
     color_id : "Couleur obligatoire",
     intensity_id : "Intensité obligatoire",
     terroir_id : "Terroir obligatoire",
@@ -26,13 +26,13 @@ const formError = {
     flavors_id : "Goût obligatoire",
 }
 
-
 const checkform = (formValues) => {
+
     const keys = Object.keys(formValues)
-    let error = null
+    let error = {}
     keys.forEach( k => {
-        if (! formValues[k] && formError[k]) {
-            error = formError[k]
+        if (! formValues[k] && errorMessage[k]) {
+            error[k] = errorMessage[k]
         }
     }) 
         return error
@@ -52,6 +52,7 @@ const FicheDeRenseignement = () => {
     const [intensity, setIntensity] = useState([])
     const [aromas, setAromas] = useState([])
     const [flavors, setFlavors] = useState([])
+    const [errorMessage, setErrorMessage] = useState({});
     
 
     useEffect (function(){
@@ -73,20 +74,19 @@ const FicheDeRenseignement = () => {
         });
     }    
     
-    console.log(formValues);
-
     const onSubmit = () => {
         
         const error = checkform(formValues)
         if (error) {
-            return alert(error)
+            setErrorMessage(error);
+            return;
         }
         postTastes({...formValues, userId})
           .then(function (result) {
             // navigate(`ficheDeRenseignement/${result.id}`);
           })
           .catch(function (err) {
-            alert(err.message);
+            setErrorMessage(err.message);
           });
       };
 
@@ -95,9 +95,6 @@ const FicheDeRenseignement = () => {
             <Navbar />
             <MenuBurger />
 
-            <form className='renseignement-container'>
-
-
             <h1>FICHE DE RENSEIGNEMENT</h1>
         
                 <div className='color'>
@@ -105,13 +102,14 @@ const FicheDeRenseignement = () => {
                         <div className="olfactif-toggle-container-color"> 
                             { colors.map((c) => (
                                 <div key={`colors${c.id}`} className='vin-container'>
-                                    <p>vin {c.name}</p>
+                                    <p>vin {c.name}</p> 
                                     <div className="checkbox-container">
                                         <input checked= {isChecked(formValues.color_id, c.id)} name='color_id' value={c.id} type="checkbox" id={`check-vin-color-${c.id}`} onChange={onChange} />
                                 <label htmlFor={`check-vin-color-${c.id}`} className='button'></label>
                             </div>
                         </div>
                             ))}
+                          <div>{errorMessage && <p className="error-message">{errorMessage.color_id}</p>}</div> 
                     </div>
                 </div>
        
@@ -127,6 +125,7 @@ const FicheDeRenseignement = () => {
                                     </div>
                                 </div>
                              ))}
+                             <div>{errorMessage && <p className="error-message">{errorMessage.intensity_id}</p>}</div>
                         </div>
                 </div>
 
@@ -142,6 +141,7 @@ const FicheDeRenseignement = () => {
                                     </div>
                                 </div>
                             ))}
+                            <div>{errorMessage && <p className="error-message">{errorMessage.aromas_id}</p>}</div>
                         </div>
                 </div>
 
@@ -157,6 +157,7 @@ const FicheDeRenseignement = () => {
                                     </div>
                                 </div>
                             ))}
+                            <div>{errorMessage && <p className="error-message">{errorMessage.flavors_id}</p>}</div>
 
                         </div>
                 </div>
@@ -170,7 +171,7 @@ const FicheDeRenseignement = () => {
                                         Sélection du cépage
                                     </option>
                                         { cepages.map((c) => (
-                                    <option value={c.id}>{c.name}</option>
+                                    <option key={`cepages${c.id}`} value={c.id}>{c.name}</option>
                                 
                                     ))}
                                 </select>
@@ -183,7 +184,7 @@ const FicheDeRenseignement = () => {
                                         Sélection du terroir
                                     </option>
                                          { terroirs.map((t) => (
-                                    <option value={t.id}>{t.name}</option>
+                                    <option key={`terroir${t.id}`}value={t.id}>{t.name}</option>
                                 
                                 ))}
                                 </select>
@@ -192,13 +193,12 @@ const FicheDeRenseignement = () => {
             </div>
                         <div className="form-infos-complementaires">
                             <textarea name="comment" id="infos" placeholder='informations complémentaires' onChange={onChange}>
-                            </textarea>
-                            <button onClick={onSubmit}>submit</button>
+                            </textarea>  
+                          
+                        <button onClick={onSubmit}>submit</button>
                         </div>
 
-            </div>
-
-
+        </div>                
     )
 }
 
