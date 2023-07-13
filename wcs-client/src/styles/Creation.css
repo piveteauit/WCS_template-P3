@@ -1,0 +1,25 @@
+.creation-page {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.creation-header,
+.creation-container {
+    width: 100%;
+    padding: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.bouteille-container {
+    width: 75%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}

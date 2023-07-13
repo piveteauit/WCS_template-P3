@@ -59,7 +59,7 @@
 .menu-burger-list {
     position: absolute;
     width: 15em;
-    height: 15em;
+    height: 17em;
     right: 0;
     top: 10em;
     padding: 2em;
@@ -80,16 +80,24 @@
     color: var(--lightest-color);
 }
 
-.panier-icon {
+.profil-icon {
     height: 1.8em;
     width: 1.8em;
     fill: var(--lightest-color);
     cursor: pointer;
 }
 
+.menu-burger-list>a:last-child>li {
+    height: 4em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top: 1px solid var(--highlight-color);
+}
+
 .menu-burger-list>a:hover,
 .menu-burger-list>a.active,
-.menu-icon-container>a.active .panier-icon {
+.menu-icon-container>a.active .profil-icon {
     color: var(--highlight-color);
     fill: var(--highlight-color);
 }
