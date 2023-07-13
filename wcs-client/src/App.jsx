@@ -7,15 +7,22 @@ import InscriptionForm from './pages/InscriptionForm';
 import Panier from './pages/Panier';
 import './App.css';
 import FicheDeRenseignement from './pages/FicheDeRenseignement';
-import Toggletest from './pages/Toggletest';
+import AdminDashboard from './pages/AdminDashboard';
 
 function App() {
   return (
     <Router>
       <Routes>
 
+
       
+
+        <Route path='/renseignement/:userId' element={<FicheDeRenseignement />} />
+        <Route path='/renseignement' element={<FicheDeRenseignement />} />
+        <Route path='/admin/*' element={<AdminDashboard />} />
+
         <Route path='/user/:userId/renseignement' element={<FicheDeRenseignement />} />
+
        
 
         <Route path="/" element={<Home />} />
