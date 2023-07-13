@@ -15,8 +15,7 @@ function App() {
       <Routes>
 
       
-        <Route path='/renseignement/:userId' element={<FicheDeRenseignement />} />
-        <Route path='/renseignement' element={<FicheDeRenseignement />} />
+        <Route path='/user/:userId/renseignement' element={<FicheDeRenseignement />} />
        
 
         <Route path="/" element={<Home />} />

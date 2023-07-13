@@ -13,6 +13,9 @@ const BottleModel = require("./BottleModel");
 const TastingResultModel = require("./TastingResultModel");
 const WorkshopModel = require("./WorkshopModel");
 const SelectForUserModel = require("./SelectForUserModel");
+const AromasModel = require("./AromasModel");
+const IntensityModel = require ("./IntensityModel");
+const FlavorsModel = require ("./FlavorsModel");
 
 
 module.exports = {
@@ -30,5 +33,8 @@ module.exports = {
     BottleModel,
     TastingResultModel,
     WorkshopModel,
-    SelectForUserModel
+    SelectForUserModel,
+    AromasModel,
+    IntensityModel,
+    FlavorsModel,
 }
