@@ -91,11 +91,12 @@ const FicheDeRenseignement = () => {
       };
 
     return (
-        <div>
+        <div className='renseignement-page'>
             <Navbar />
             <MenuBurger />
 
-            <div className='FicheDeRenseignement-container'>
+            <form className='renseignement-container'>
+
 
             <h1>FICHE DE RENSEIGNEMENT</h1>
         
@@ -156,8 +157,10 @@ const FicheDeRenseignement = () => {
                                     </div>
                                 </div>
                             ))}
+
                         </div>
                 </div>
+
 
                 <div className="menus-deroulants">
                         <div className='select-cepage'>
@@ -193,8 +196,8 @@ const FicheDeRenseignement = () => {
                             <button onClick={onSubmit}>submit</button>
                         </div>
 
-                        </div>
             </div>
+
 
     )
 }

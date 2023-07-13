@@ -3,7 +3,7 @@ import Navbar from '../components/Navbar';
 import MenuBurger from '../components/MenuBurger';
 import '../styles/InscriptionForm.css';
 import { postUser } from '../services';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate,  } from 'react-router-dom';
 
 function calculateAge(birthdate) {
   const today = new Date();
@@ -22,6 +22,7 @@ const InscriptionForm = () => {
   const [isAgeValid, setIsAgeValid] = useState(false);
   const [password, setPassword] = useState('');
   const [samePassword, setSamePassword] = useState('');
+  const [totalPrice, setTotalPrice] = useState('');
 
   const [formValues, setFormValues] = useState({
     firstname: '',
@@ -73,6 +74,9 @@ const InscriptionForm = () => {
       [e.target.name]: e.target.value,
     });
 
+    if (e.target.name === 'atelier') {
+      handlePrice()
+    }
     if (e.target.name === 'password') {
       handlePassword(e);
     }
@@ -82,8 +86,17 @@ const InscriptionForm = () => {
     }
   };
 
+  const handlePrice = () => {
+    if(formValues.atelier === "dégustation") {
+      setTotalPrice('70 €')
+    } else {
+      setTotalPrice('30 €')
+    }
+  }
+
   const onSubmit = (e) => {
     e.preventDefault();
+
     postUser(formValues)
       .then(function (result) {
         navigate(`/user/${result.id}/renseignement/`);
@@ -117,6 +130,7 @@ const InscriptionForm = () => {
           name="lastname"
           id="last-name"
           placeholder="Entrez votre nom..."
+          required
         />
 
         <label htmlFor="first-name">Prénom</label>
@@ -126,6 +140,7 @@ const InscriptionForm = () => {
           name="firstname"
           id="first-name"
           placeholder="Entrez votre prénom..."
+          required
         />
 
         <label htmlFor="age">Age</label>
@@ -135,6 +150,7 @@ const InscriptionForm = () => {
           name="age"
           id="age"
           placeholder="Sélectionner votre date de naissance..."
+          required
           />
           {!isAgeValid && formValues.age && (
             <p className='error-msg'>Vous devez avoir au moins 18 ans pour participer.</p>
@@ -147,6 +163,7 @@ const InscriptionForm = () => {
           name="phone"
           id="phone"
           placeholder="Entrez votre numéro de téléphone..."
+          required 
         />
 
         <label htmlFor="email">Adresse mail</label>
@@ -156,11 +173,12 @@ const InscriptionForm = () => {
           name="mail"
           id="email"
           placeholder="Entrez votre adresse mail..."
+          required
         />
 
         <label htmlFor="atelier">Choix de l'atelier</label>
         <select onChange={onChange} name="atelier" id="atelier" required>
-          <option value="" disabled hidden>
+          <option value="" hidden>
             Sélection de l'atelier
           </option>
           <option value="création">Atelier Création</option>
@@ -179,7 +197,7 @@ const InscriptionForm = () => {
           onChange={onChange}
           value={formValues.password}
           required
-        />
+          />
         <p className="error-msg">{errorMessage}</p>
 
         <label htmlFor="same-password">Confirmation mot de passe</label>
@@ -191,10 +209,11 @@ const InscriptionForm = () => {
           onChange={onChange}
           value={formValues.samepassword}
           required
-        />
+          />
         <p className={formValues.samepassword === formValues.password ? "same-pwd" : "error-msg"}>
           Erreur : les mots de passe sont différents
         </p>
+        <h2>Montant : <span>{totalPrice}</span></h2>
         <button type="submit">Valider l'inscription</button>
       </form>
     </div>
