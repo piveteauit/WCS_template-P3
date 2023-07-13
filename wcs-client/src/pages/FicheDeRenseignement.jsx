@@ -2,141 +2,202 @@ import { useParams } from 'react-router-dom'
 import Navbar from '../components/Navbar'
 import MenuBurger from '../components/MenuBurger'
 import '../styles/FicheDeRenseignement.css'
+import { useEffect, useState } from 'react'
+import { getAll, postTastes } from '../services'
+
+
+const initialValues = { 
+    color_id : null,
+    intensity_id : null,
+    terroir_id : null,
+    cepage_id : null,
+    aromas_id : null,
+    flavors_id : null,
+
+    comment : ""
+}
+
+const formError = { 
+    color_id : "Couleur obligatoire",
+    intensity_id : "Intensité obligatoire",
+    terroir_id : "Terroir obligatoire",
+    cepage_id : "Cepage obligatoire",
+    aromas_id : "Arôme obligatoire",
+    flavors_id : "Goût obligatoire",
+}
+
+
+const checkform = (formValues) => {
+    const keys = Object.keys(formValues)
+    let error = null
+    keys.forEach( k => {
+        if (! formValues[k] && formError[k]) {
+            error = formError[k]
+        }
+    }) 
+        return error
+    } 
+    
+const isChecked = (id, value) => {
+    return id == value
+}
+
 
 const FicheDeRenseignement = () => {
-    const params = useParams()
-    console.log(params)
+    const [formValues, setFormValues] = useState(initialValues)
+    const { userId } = useParams ()
+    const [cepages, setCepages] = useState([])
+    const [terroirs, setTerroirs] = useState([])
+    const [colors, setColors] = useState([])
+    const [intensity, setIntensity] = useState([])
+    const [aromas, setAromas] = useState([])
+    const [flavors, setFlavors] = useState([])
+    
 
+    useEffect (function(){
+        getAll("cepages").then(setCepages)
+        getAll("terroirs").then(setTerroirs)
+        getAll("colors").then(setColors)
+        getAll("intensity").then(setIntensity)
+        getAll("aromas").then(setAromas)
+        getAll("flavors").then(setFlavors)
+    }, [])
+
+    
+    const onChange = (e) => {
+
+        let value = (e.target.checked || typeof e.target.checked != "boolean") ? e.target.value : false
+        setFormValues({
+          ...formValues,
+          [e.target.name]: value,
+        });
+    }    
+    
+    console.log(formValues);
+
+    const onSubmit = () => {
+        
+        const error = checkform(formValues)
+        if (error) {
+            return alert(error)
+        }
+        postTastes({...formValues, userId})
+          .then(function (result) {
+            // navigate(`ficheDeRenseignement/${result.id}`);
+          })
+          .catch(function (err) {
+            alert(err.message);
+          });
+      };
 
     return (
-        <div>
+        <div className='renseignement-page'>
             <Navbar />
             <MenuBurger />
 
-            <div className='FicheDeRenseignement-container'>
+            <form className='renseignement-container'>
 
-                <h1>FICHE DE RENSEIGNEMENT</h1>
-                <div className='vin-container'>
-                    <p>vin blanc</p>
-                    <div className="checkbox-container">
-                        <input type="checkbox" id='check-vin-blanc' />
-                        <label htmlFor="check-vin-blanc" className='button'></label>
+
+            <h1>FICHE DE RENSEIGNEMENT</h1>
+        
+                <div className='color'>
+                    <h2><span>Couleur</span></h2>
+                        <div className="olfactif-toggle-container-color"> 
+                            { colors.map((c) => (
+                                <div key={`colors${c.id}`} className='vin-container'>
+                                    <p>vin {c.name}</p>
+                                    <div className="checkbox-container">
+                                        <input checked= {isChecked(formValues.color_id, c.id)} name='color_id' value={c.id} type="checkbox" id={`check-vin-color-${c.id}`} onChange={onChange} />
+                                <label htmlFor={`check-vin-color-${c.id}`} className='button'></label>
+                            </div>
+                        </div>
+                            ))}
                     </div>
-
                 </div>
-                <div className='vin-container'>
-                    <p>vin rouge</p>
-                    <div className="checkbox-container">
-                        <input type="checkbox" id='check' />
-                        <label htmlFor="check" className='button'></label>
-                    </div>
+       
+                <div className='intensity'>
+                     <h2><span>Intensité</span></h2>
+                        <div className="olfactif-toggle-container-intensity"> 
+                            { intensity.map((i) => (
+                                <div key={`intensity${i.id}`} className='vin-container'>
+                                    <p>vin {i.name}</p>
+                                    <div className="checkbox-container">
+                                            <input checked= {isChecked(formValues.intensity_id, i.id)} name='intensity_id' value={i.id} type="checkbox" id={`check-vin-intensity-${i.id}`} onChange={onChange} />
+                                        <label htmlFor={`check-vin-intensity-${i.id}`} className='button'></label>
+                                    </div>
+                                </div>
+                             ))}
+                        </div>
                 </div>
 
                 <div className='olfactif'>
-                    <h2><span>OLFACTIF</span></h2>
-                    <h3>Intensitée</h3>
-                    <div className="olfactif-toggle-container-intensity">
-
-                        <div className="checkbox-container">
-                            <p>FAIBLE</p>
-                            <input type="checkbox" id='low-intensity' />
-                            <label htmlFor="low-intensity" className='button'></label>
+                     <h2><span>Aromes</span></h2>
+                        <div className="olfactif-toggle-container-aromes"> 
+                            { aromas.map((a) => (
+                                <div key={`aromas${a.id}`} className='vin-container'>
+                                    <p>vin {a.name}</p>
+                                    <div className="checkbox-container">
+                                            <input checked= {isChecked(formValues.aromas_id, a.id)} name='aromas_id' value={a.id} type="checkbox" id={`check-vin-aromas-${a.id}`} onChange={onChange} />
+                                        <label htmlFor={`check-vin-aromas-${a.id}`} className='button'></label>
+                                    </div>
+                                </div>
+                            ))}
                         </div>
-
-                        <div className="checkbox-container">
-                            <p>MOYEN</p>
-                            <input type="checkbox" id='middle-intensity' />
-                            <label htmlFor="middle-intensity" className='button'></label>
-                        </div>
-
-                        <div className="checkbox-container">
-                            <p>FORT</p>
-                            <input type="checkbox" id='high-intensity' />
-                            <label htmlFor="high-intensity" className='button'></label>
-                        </div>
-                    </div>
-                    <h3>Aromes</h3>
-                    <div className="olfactif-toggle-container-aromes">
-
-                        <div className="checkbox-container">
-                            <p>FRUITÉ</p>
-                            <input type="checkbox" id='fruit-arome' />
-                            <label htmlFor="fruit-arome" className='button'></label>
-                        </div>
-                        <div className="checkbox-container">
-                            <p>FLORAL</p>
-                            <input type="checkbox" id='floral-arome' />
-                            <label htmlFor="floral-arome" className='button'></label>
-                        </div>
-                        <div className="checkbox-container">
-                            <p>EPICÉ</p>
-                            <input type="checkbox" id='spicy-arome' />
-                            <label htmlFor="spicy-arome" className='button'></label>
-                        </div>
-                        <div className="checkbox-container">
-                            <p>BOISÉ</p>
-                            <input type="checkbox" id='wood-arome' />
-                            <label htmlFor="wood-arome" className='button'></label>
-                        </div>
-                    </div>
-                    <div className="gustatif">
-                        <h2><span>GUSTATIF</span></h2>
-                        <h3>Intensité</h3>
-                        <div className="olfactif-toggle-container-intensity-taste">
-                            <div className="checkbox-container">
-                                <p>FAIBLE</p>
-                                <input type="checkbox" id='low-intensity-taste' />
-                                <label htmlFor="low-intensity-taste" className='button'></label>
-                            </div>
-                            <div className="checkbox-container">
-                                <p>MOYEN</p>
-                                <input type="checkbox" id='middle-intensity-taste' />
-                                <label htmlFor="middle-intensity-taste" className='button'></label>
-                            </div>
-                            <div className="checkbox-container">
-                                <p>FORT</p>
-                                <input type="checkbox" id='high-intensity-taste' />
-                                <label htmlFor="high-intensity-taste" className='button'></label>
-                            </div>
-                        </div>
-                        <h3>Saveur</h3>
-                        <div className="olfactif-toggle-container-taste">
-                            <div className="checkbox-container">
-                                <p>ACIDE</p>
-                                <input type="checkbox" id='acide-taste' />
-                                <label htmlFor="acide-taste" className='button'></label>
-                            </div>
-                            <div className="checkbox-container">
-                                <p>DOUX</p>
-                                <input type="checkbox" id='sweet-taste' />
-                                <label htmlFor="sweet-taste" className='button'></label>
-                            </div>
-                            <div className="checkbox-container">
-                                <p>TANIQUE</p>
-                                <input type="checkbox" id='tannic-taste' />
-                                <label htmlFor="tannic-taste" className='button'></label>
-                            </div>
-                            <div className="checkbox-container">
-                                <p>ÉQUILIBRÉ</p>
-                                <input type="checkbox" id='balanced-taste' />
-                                <label htmlFor="balanced-taste" className='button'></label>
-                            </div>
-                            <div className="checkbox-container">
-                                <p>LONG EN BOUCHE</p>
-                                <input type="checkbox" id='long-taste' />
-                                <label htmlFor="long-taste" className='button'></label>
-                            </div>
-                            <div className="form-infos-complementaires">
-                                <textarea name="infod-complementaires" id="infos" placeholder='informations complémentaires'>
-                                </textarea>
-                                <button>submit</button>
-                            </div>
-
-                        </div>
-                    </div>
                 </div>
+
+                <div className='gustatif'>
+                     <h2><span>Saveur</span></h2>
+                        <div className="olfactif-toggle-container-aromes"> 
+                            { flavors.map((f) => (
+                                <div key={`flavors${f.id}`} className='vin-container'>
+                                    <p>vin {f.name}</p>
+                                    <div className="checkbox-container">
+                                            <input checked= {isChecked(formValues.flavors_id, f.id)} name='flavors_id' value={f.id} type="checkbox" id={`check-vin-flavors-${f.id}`} onChange={onChange} />
+                                        <label htmlFor={`check-vin-flavors-${f.id}`} className='button'></label>
+                                    </div>
+                                </div>
+                            ))}
+
+                        </div>
+                </div>
+
+
+                <div className="menus-deroulants">
+                        <div className='select-cepage'>
+                            <label htmlFor="atelier">CHOIX DU CEPAGE</label>
+                                <select onChange={onChange} name="cepage_id" required>
+                                    <option value="">
+                                        Sélection du cépage
+                                    </option>
+                                        { cepages.map((c) => (
+                                    <option value={c.id}>{c.name}</option>
+                                
+                                    ))}
+                                </select>
+                </div>
+
+                <div className='select-terroir'>
+                            <label htmlFor="atelier">CHOIX DU TERROIR</label>
+                                <select onChange={onChange} name="terroir_id" required>
+                                    <option value="">
+                                        Sélection du terroir
+                                    </option>
+                                         { terroirs.map((t) => (
+                                    <option value={t.id}>{t.name}</option>
+                                
+                                ))}
+                                </select>
+                </div>
+
             </div>
-        </div>
+                        <div className="form-infos-complementaires">
+                            <textarea name="comment" id="infos" placeholder='informations complémentaires' onChange={onChange}>
+                            </textarea>
+                            <button onClick={onSubmit}>submit</button>
+                        </div>
+
+            </div>
+
 
     )
 }

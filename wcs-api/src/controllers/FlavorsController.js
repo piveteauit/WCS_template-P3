@@ -1,21 +1,21 @@
-const { YearsModel } = require("../models");
+const { FlavorsModel } = require("../models")
 const BaseController = require("./BaseController");
 
-class YearsController extends BaseController {
+class FlavorsController extends BaseController {
 
     constructor(req, res) {
         super(req, res);
-        this.model = new YearsModel();
+        this.model = new FlavorsModel();
     }
 
-    createYears() {
-        // this.sendJson({ ok : "route ok"})
-        const { label } = this.req.body;
+    createFlavors() {
+        this.sendJson({ ok : "route ok"})
+        const { name } = this.req.body;
 
         this.model
-            .insert ({ label })
+            .insert ({ name })
             .then((result) => {
-               return this.res.status(201).send({ id: result.insertId, label })
+               return this.res.status(201).send({ id: result.insertId, name })
             })
             .catch((err) => {
                 console.error(err);
@@ -25,8 +25,7 @@ class YearsController extends BaseController {
             });
       
     }
-    
 
 }
 
-module.exports = YearsController;
+module.exports = FlavorsController;

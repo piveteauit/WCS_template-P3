@@ -10,7 +10,9 @@ const BottlePerCepageRoutes = require("./BottlePerCepageRoutes");
 const TastingSheetRoutes = require("./TastingSheetRoutes");
 const BottleRoutes = require("./BottleRoutes");
 const TastingResultRoutes = require("./TastingResultRoutes");
-const workshopRoutes = require("./WorkshopRoutes");
+const WorkshopRoutes = require("./WorkshopRoutes");
+const AromasRoutes = require("./AromasRoutes");
+const IntensityRoutes = require("./IntensityRoutes");
 
 
 module.exports = {
@@ -26,5 +28,7 @@ module.exports = {
     TastingSheetRoutes,
     BottleRoutes,
     TastingResultRoutes,
-    workshopRoutes
+    WorkshopRoutes,
+    AromasRoutes,
+    IntensityRoutes,
 }
