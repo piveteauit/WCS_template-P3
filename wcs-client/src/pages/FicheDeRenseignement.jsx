@@ -17,7 +17,7 @@ const initialValues = {
     comment : ""
 }
 
-const formError = { 
+const errorMessage = { 
     color_id : "Couleur obligatoire",
     intensity_id : "Intensité obligatoire",
     terroir_id : "Terroir obligatoire",
@@ -25,14 +25,14 @@ const formError = {
     aromas_id : "Arôme obligatoire",
     flavors_id : "Goût obligatoire",
 }
-
-
+console.log(errorMessage.color_id)
 const checkform = (formValues) => {
+
     const keys = Object.keys(formValues)
     let error = null
     keys.forEach( k => {
-        if (! formValues[k] && formError[k]) {
-            error = formError[k]
+        if (! formValues[k] && errorMessage[k]) {
+            error = errorMessage[k]
         }
     }) 
         return error
@@ -52,6 +52,7 @@ const FicheDeRenseignement = () => {
     const [intensity, setIntensity] = useState([])
     const [aromas, setAromas] = useState([])
     const [flavors, setFlavors] = useState([])
+    const [errorMessage, setErrorMessage] = useState(null);
     
 
     useEffect (function(){
@@ -73,20 +74,21 @@ const FicheDeRenseignement = () => {
         });
     }    
     
-    console.log(formValues);
+    // console.log(formValues);
 
     const onSubmit = () => {
         
         const error = checkform(formValues)
         if (error) {
-            return alert(error)
+            setErrorMessage(error);
+            return;
         }
         postTastes({...formValues, userId})
           .then(function (result) {
             // navigate(`ficheDeRenseignement/${result.id}`);
           })
           .catch(function (err) {
-            alert(err.message);
+            setErrorMessage(err.message);
           });
       };
 
@@ -95,9 +97,6 @@ const FicheDeRenseignement = () => {
             <Navbar />
             <MenuBurger />
 
-            <form className='renseignement-container'>
-
-
             <h1>FICHE DE RENSEIGNEMENT</h1>
         
                 <div className='color'>
@@ -105,10 +104,11 @@ const FicheDeRenseignement = () => {
                         <div className="olfactif-toggle-container-color"> 
                             { colors.map((c) => (
                                 <div key={`colors${c.id}`} className='vin-container'>
-                                    <p>vin {c.name}</p>
+                                    <p>vin {c.name}</p> 
                                     <div className="checkbox-container">
                                         <input checked= {isChecked(formValues.color_id, c.id)} name='color_id' value={c.id} type="checkbox" id={`check-vin-color-${c.id}`} onChange={onChange} />
                                 <label htmlFor={`check-vin-color-${c.id}`} className='button'></label>
+                                <div>{errorMessage && <p className="error-message">{errorMessage}</p>}</div> 
                             </div>
                         </div>
                             ))}
@@ -192,13 +192,12 @@ const FicheDeRenseignement = () => {
             </div>
                         <div className="form-infos-complementaires">
                             <textarea name="comment" id="infos" placeholder='informations complémentaires' onChange={onChange}>
-                            </textarea>
-                            <button onClick={onSubmit}>submit</button>
+                            </textarea>  
+                          
+                        <button onClick={onSubmit}>submit</button>
                         </div>
 
-            </div>
-
-
+        </div>                
     )
 }
 

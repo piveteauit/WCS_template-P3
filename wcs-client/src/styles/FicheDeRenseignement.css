@@ -295,4 +295,9 @@ label {
     color: var(--lightest-color);
 }
 
+.error-message {
+    font-size: x-small;
+    color: red;
+}
+
 
