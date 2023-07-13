@@ -1,17 +1,17 @@
-const { TastesModel } = require("../models");
+const { AromasModel } = require("../models")
 const BaseController = require("./BaseController");
 
-class TastesController extends BaseController {
+class AromasController extends BaseController {
 
     constructor(req, res) {
         super(req, res);
-        this.model = new TastesModel();
+        this.model = new AromasModel();
     }
 
-    createTastes() {
-        // this.sendJson({ ok : "route ok"})
+    createAromas() {
+        this.sendJson({ ok : "route ok"})
         const { name } = this.req.body;
-            console.log(this.req.body);
+
         this.model
             .insert ({ name })
             .then((result) => {
@@ -25,8 +25,7 @@ class TastesController extends BaseController {
             });
       
     }
-    
-    }
 
+}
 
-module.exports = TastesController;
+module.exports = AromasController;

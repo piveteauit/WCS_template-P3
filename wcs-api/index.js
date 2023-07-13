@@ -14,6 +14,9 @@ const bottleRouter = require("./src/routes/BottleRoutes");
 const tastingResultRouter = require("./src/routes/TastingResultRoutes");
 const workshopRouter =require("./src/routes/WorkshopRoutes");
 const selectForUserRouter = require("./src/routes/SelectForUserRoutes");
+const aromasRouter = require('./src/routes/AromasRoutes');
+const IntensityRouter = require('./src/routes/IntensityRoutes');
+const flavorsRouter = require('./src/routes/FlavorsRoutes');
 
 
 const port = process.env.APP_PORT || 8080;
@@ -42,9 +45,14 @@ APIRouter.use('/bottle', bottleRouter);
 APIRouter.use('/tastingResult', tastingResultRouter);
 APIRouter.use('/workshop', workshopRouter);
 APIRouter.use('/selectForUser', selectForUserRouter);
+APIRouter.use('/intensity', IntensityRouter);
+APIRouter.use('/aromas', aromasRouter);
+APIRouter.use('/flavors', flavorsRouter);
 
 
 app.use('/api', APIRouter);
+
+
 
 app.listen(port, function() {
     console.log('API is running on %s', port)

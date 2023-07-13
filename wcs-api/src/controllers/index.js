@@ -13,6 +13,9 @@ const BottleController = require("./BottleController");
 const TastingResultController = require("./TastingResultController");
 const WorkshopController = require("./WorkshopController");
 const SelectForUserController = require("./SelectForUserController");
+const AromasController = require("./AromasController");
+const IntensityController = require("./IntensityController");
+const FlavorsController = require("./FlavorsController");
 
 
 module.exports = {
@@ -30,5 +33,8 @@ module.exports = {
     BottleController,
     TastingResultController,
     WorkshopController,
-    SelectForUserController
+    SelectForUserController,
+    AromasController,
+    IntensityController,
+    FlavorsController
 }
