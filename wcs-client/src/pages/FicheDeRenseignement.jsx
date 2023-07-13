@@ -25,7 +25,7 @@ const errorMessage = {
     aromas_id : "Arôme obligatoire",
     flavors_id : "Goût obligatoire",
 }
-console.log(errorMessage.color_id)
+
 const checkform = (formValues) => {
 
     const keys = Object.keys(formValues)
