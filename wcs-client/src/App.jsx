@@ -13,18 +13,10 @@ function App() {
   return (
     <Router>
       <Routes>
-
-
-      
-
-        <Route path='/renseignement/:userId' element={<FicheDeRenseignement />} />
-        <Route path='/renseignement' element={<FicheDeRenseignement />} />
         <Route path='/admin/*' element={<AdminDashboard />} />
 
         <Route path='/user/:userId/renseignement' element={<FicheDeRenseignement />} />
-
-       
-
+        
         <Route path="/" element={<Home />} />
 
         <Route path="/atelier-creation" element={<AtelierCrea />} />
