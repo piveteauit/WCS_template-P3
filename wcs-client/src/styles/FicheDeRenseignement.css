@@ -298,6 +298,7 @@ label {
 .error-message {
     font-size: x-small;
     color: red;
+    margin-top: 2em;
 }
 
 

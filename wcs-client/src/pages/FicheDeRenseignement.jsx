@@ -29,10 +29,10 @@ console.log(errorMessage.color_id)
 const checkform = (formValues) => {
 
     const keys = Object.keys(formValues)
-    let error = null
+    let error = {}
     keys.forEach( k => {
         if (! formValues[k] && errorMessage[k]) {
-            error = errorMessage[k]
+            error[k] = errorMessage[k]
         }
     }) 
         return error
@@ -52,7 +52,7 @@ const FicheDeRenseignement = () => {
     const [intensity, setIntensity] = useState([])
     const [aromas, setAromas] = useState([])
     const [flavors, setFlavors] = useState([])
-    const [errorMessage, setErrorMessage] = useState(null);
+    const [errorMessage, setErrorMessage] = useState({});
     
 
     useEffect (function(){
@@ -74,8 +74,6 @@ const FicheDeRenseignement = () => {
         });
     }    
     
-    // console.log(formValues);
-
     const onSubmit = () => {
         
         const error = checkform(formValues)
@@ -108,10 +106,10 @@ const FicheDeRenseignement = () => {
                                     <div className="checkbox-container">
                                         <input checked= {isChecked(formValues.color_id, c.id)} name='color_id' value={c.id} type="checkbox" id={`check-vin-color-${c.id}`} onChange={onChange} />
                                 <label htmlFor={`check-vin-color-${c.id}`} className='button'></label>
-                                <div>{errorMessage && <p className="error-message">{errorMessage}</p>}</div> 
                             </div>
                         </div>
                             ))}
+                          <div>{errorMessage && <p className="error-message">{errorMessage.color_id}</p>}</div> 
                     </div>
                 </div>
        
@@ -127,6 +125,7 @@ const FicheDeRenseignement = () => {
                                     </div>
                                 </div>
                              ))}
+                             <div>{errorMessage && <p className="error-message">{errorMessage.intensity_id}</p>}</div>
                         </div>
                 </div>
 
@@ -142,6 +141,7 @@ const FicheDeRenseignement = () => {
                                     </div>
                                 </div>
                             ))}
+                            <div>{errorMessage && <p className="error-message">{errorMessage.aromas_id}</p>}</div>
                         </div>
                 </div>
 
@@ -157,6 +157,7 @@ const FicheDeRenseignement = () => {
                                     </div>
                                 </div>
                             ))}
+                            <div>{errorMessage && <p className="error-message">{errorMessage.flavors_id}</p>}</div>
 
                         </div>
                 </div>
@@ -170,7 +171,7 @@ const FicheDeRenseignement = () => {
                                         Sélection du cépage
                                     </option>
                                         { cepages.map((c) => (
-                                    <option value={c.id}>{c.name}</option>
+                                    <option key={`cepages${c.id}`} value={c.id}>{c.name}</option>
                                 
                                     ))}
                                 </select>
@@ -183,7 +184,7 @@ const FicheDeRenseignement = () => {
                                         Sélection du terroir
                                     </option>
                                          { terroirs.map((t) => (
-                                    <option value={t.id}>{t.name}</option>
+                                    <option key={`terroir${t.id}`}value={t.id}>{t.name}</option>
                                 
                                 ))}
                                 </select>
