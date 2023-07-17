@@ -17,31 +17,14 @@ const initialValues = {
     comment : ""
 }
 
-const errorMessage = { 
-    color_id : "Couleur obligatoire",
-    intensity_id : "Intensité obligatoire",
-    terroir_id : "Terroir obligatoire",
-    cepage_id : "Cepage obligatoire",
-    aromas_id : "Arôme obligatoire",
-    flavors_id : "Goût obligatoire",
-}
-
-const checkform = (formValues) => {
-
-    const keys = Object.keys(formValues)
-    let error = {}
-    keys.forEach( k => {
-        if (! formValues[k] && errorMessage[k]) {
-            error[k] = errorMessage[k]
+const errors = {
+    color_id : "Merci de renseigner une couleur",
+    intensity_id : "Merci de renseigner une intensité",
+    terroir_id : "Merci de renseigner un terroir",
+    cepage_id : "Merci de renseigner un cépage",
+    aromas_id : "Merci de renseigner un arôme",
+    flavors_id : "Merci de renseigner un goût",
         }
-    }) 
-        return error
-    } 
-    
-const isChecked = (id, value) => {
-    return id == value
-}
-
 
 const FicheDeRenseignement = () => {
     const [formValues, setFormValues] = useState(initialValues)
@@ -52,10 +35,9 @@ const FicheDeRenseignement = () => {
     const [intensity, setIntensity] = useState([])
     const [aromas, setAromas] = useState([])
     const [flavors, setFlavors] = useState([])
-    const [errorMessage, setErrorMessage] = useState({});
-    
+    const [errorMessage, setErrorMessage] = useState({})
 
-    useEffect (function(){
+     useEffect (function(){
         getAll("cepages").then(setCepages)
         getAll("terroirs").then(setTerroirs)
         getAll("colors").then(setColors)
@@ -64,6 +46,25 @@ const FicheDeRenseignement = () => {
         getAll("flavors").then(setFlavors)
     }, [])
 
+
+const isChecked = (id, value) => {
+    return id == value
+}
+
+
+const checkform = (formValues) => {
+
+    const keys = Object.keys(formValues)
+    let error = {}
+    keys.forEach( k => {
+        if (! formValues[k] && errors[k] ) {
+            error[k] = errors[k]
+        } else {
+            delete error[k]
+        }
+    });
+        return error
+    } 
     
     const onChange = (e) => {
 
@@ -72,12 +73,16 @@ const FicheDeRenseignement = () => {
           ...formValues,
           [e.target.name]: value,
         });
+        setErrorMessage({
+            ...errorMessage,
+            [e.target.name]: ""
+        })
     }    
     
-    const onSubmit = () => {
-        
+    const onSubmit = () => {  
+
         const error = checkform(formValues)
-        if (error) {
+        if (Object.keys(error).length > 0) {
             setErrorMessage(error);
             return;
         }
@@ -109,8 +114,8 @@ const FicheDeRenseignement = () => {
                             </div>
                         </div>
                             ))}
-                          <div>{errorMessage && <p className="error-message">{errorMessage.color_id}</p>}</div> 
                     </div>
+                    <div>{errorMessage.color_id && <p className="error-message">{errorMessage.color_id}</p>}</div> 
                 </div>
        
                 <div className='intensity'>
@@ -120,13 +125,14 @@ const FicheDeRenseignement = () => {
                                 <div key={`intensity${i.id}`} className='vin-container'>
                                     <p>vin {i.name}</p>
                                     <div className="checkbox-container">
-                                            <input checked= {isChecked(formValues.intensity_id, i.id)} name='intensity_id' value={i.id} type="checkbox" id={`check-vin-intensity-${i.id}`} onChange={onChange} />
+                                            <input checked= {isChecked(formValues.intensity_id, i.id)} name='intensity_id' value={i.id} type="checkbox" id={`check-vin-intensity-${i.id}`} onChange={onChange}/>
                                         <label htmlFor={`check-vin-intensity-${i.id}`} className='button'></label>
                                     </div>
                                 </div>
                              ))}
-                             <div>{errorMessage && <p className="error-message">{errorMessage.intensity_id}</p>}</div>
+                            
                         </div>
+                            <div>{errorMessage && <p className="error-message">{errorMessage.intensity_id}</p>}</div>
                 </div>
 
                 <div className='olfactif'>
@@ -136,13 +142,13 @@ const FicheDeRenseignement = () => {
                                 <div key={`aromas${a.id}`} className='vin-container'>
                                     <p>vin {a.name}</p>
                                     <div className="checkbox-container">
-                                            <input checked= {isChecked(formValues.aromas_id, a.id)} name='aromas_id' value={a.id} type="checkbox" id={`check-vin-aromas-${a.id}`} onChange={onChange} />
+                                            <input checked= {isChecked(formValues.aromas_id, a.id)} name='aromas_id' value={a.id} type="checkbox" id={`check-vin-aromas-${a.id}`} onChange={onChange}/>
                                         <label htmlFor={`check-vin-aromas-${a.id}`} className='button'></label>
                                     </div>
                                 </div>
                             ))}
-                            <div>{errorMessage && <p className="error-message">{errorMessage.aromas_id}</p>}</div>
                         </div>
+                        <div>{errorMessage && <p className="error-message">{errorMessage.aromas_id}</p>}</div>
                 </div>
 
                 <div className='gustatif'>
@@ -152,18 +158,17 @@ const FicheDeRenseignement = () => {
                                 <div key={`flavors${f.id}`} className='vin-container'>
                                     <p>vin {f.name}</p>
                                     <div className="checkbox-container">
-                                            <input checked= {isChecked(formValues.flavors_id, f.id)} name='flavors_id' value={f.id} type="checkbox" id={`check-vin-flavors-${f.id}`} onChange={onChange} />
+                                            <input checked= {isChecked(formValues.flavors_id, f.id)} name='flavors_id' value={f.id} type="checkbox" id={`check-vin-flavors-${f.id}`} onChange={onChange}/>
                                         <label htmlFor={`check-vin-flavors-${f.id}`} className='button'></label>
                                     </div>
                                 </div>
                             ))}
-                            <div>{errorMessage && <p className="error-message">{errorMessage.flavors_id}</p>}</div>
-
                         </div>
+                    <div>{errorMessage && <p className="error-message">{errorMessage.flavors_id}</p>}</div>
                 </div>
 
 
-                <div className="menus-deroulants">
+                <div className="dropdown-menu">
                         <div className='select-cepage'>
                             <label htmlFor="atelier">CHOIX DU CEPAGE</label>
                                 <select onChange={onChange} name="cepage_id" required>
