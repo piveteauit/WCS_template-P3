@@ -98,7 +98,7 @@ button:hover {
   color: var(--lightest-color);
 }
 
-button:hover::before {
+/* button:hover::before {
   width: 50%;
   height: 0.5px;
   top: -7px;
@@ -113,5 +113,5 @@ button:hover::after {
   bottom: -7px;
   right: -20%;
   border-top: 1px solid var(--dark-color);
-  border-right: 1px solid var(--dark-color);
-}
+  border-right: 1px solid var(--dark-color); 
+}*/
