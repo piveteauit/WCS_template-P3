@@ -80,7 +80,7 @@
 .nav-dropdown:hover,
 .navbar-container>a.active,
 .nav-ateliers>a.active,
-.navbar-container>a.active .panier-icon  {
+.navbar-container>a.active .profil-icon  {
     color: var(--highlight-color);
     fill: var(--highlight-color);
 }

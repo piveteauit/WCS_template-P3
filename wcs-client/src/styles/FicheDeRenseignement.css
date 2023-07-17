@@ -241,6 +241,7 @@ label {
 
 
 .form-infos-complementaires {
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -248,13 +249,16 @@ label {
     flex-direction: column;
 }
 .form-infos-complementaires>label {
-    margin: 1em;
+    margin: 2em 0 1em 2em;
+    font-weight: 100;
+    letter-spacing: 0.2em;
+    color: var(--highlight-color);
     align-self: flex-start;
 }
 
 .form-infos-complementaires>textarea {
-    height: 40vh;
-    width: 50em;
+    height: 20%;
+    width: 75%;
     resize: none;
     outline: none;
     background: #f5f4f4;

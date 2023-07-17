@@ -4,9 +4,12 @@ import AtelierCrea from './pages/AtelierCrea';
 import AtelierDegus from './pages/AtelierDegus';
 import NotreHistoire from './pages/NotreHistoire';
 import InscriptionForm from './pages/InscriptionForm';
-import Panier from './pages/Panier';
+import Profil from './pages/Profil';
 import './App.css';
 import FicheDeRenseignement from './pages/FicheDeRenseignement';
+import FicheDegustation from './pages/FicheDegustation';
+import Creation from './pages/Creation';
+import Toggletest from './pages/Toggletest';
 import AdminDashboard from './pages/AdminDashboard';
 
 function App() {
@@ -21,9 +24,11 @@ function App() {
 
         <Route path="/atelier-creation" element={<AtelierCrea />} />
         <Route path="/atelier-degustation" element={<AtelierDegus />} />
+        <Route path='/degustation' element={<FicheDegustation />} />
+        <Route path='/creation' element={<Creation />} />
         <Route path="/notre-histoire" element={<NotreHistoire />} />
         <Route path="/inscription" element={<InscriptionForm />} />
-        <Route path='/panier' element={<Panier />} />
+        <Route path='/profil' element={<Profil />} />
       </Routes>
     </Router>
   );
