@@ -10,25 +10,17 @@ const Creation = () => {
             <MenuBurger />
             <h1>Création de votre vin</h1>
             <div className='creation-header'>
-                <h2>Guide</h2>
+                <h2><span>Guide</span></h2>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error ipsam nam voluptatibus consequatur a repellat, quibusdam quia non voluptate? Doloribus sed sunt animi cum quam architecto corporis sequi eligendi quo.</p>
             </div>
             <div className='creation-container'>
-                <h2>Dosage</h2>
+                <h2><span>Dosage</span></h2>
                 <h3>Bouteille par cépage</h3>
-                <div className='bouteille-container'>
-                    <p>Bouteille 1</p>
-                    <p> /100</p>
-                </div>
-                <div className='bouteille-container'>
-                    <p>Bouteille 2</p>
-                    <p> /100</p>
-                </div>
-                <div className='bouteille-container'>
-                    <p>Bouteille 3</p>
-                    <p> /100</p>
-                </div>
+                <ul className='bouteilles-list'>
+                    <li>Bouteille 1 <span>30%</span></li>
+                </ul>
             </div>
+            <h2><span>Solution d'assemblage</span></h2>
             <Footer />
         </div>
     )

@@ -133,8 +133,12 @@ const FicheDegustation = () => {
                 </div>
                 <div className="form-infos-complementaires">
                     <label htmlFor="info-complementaires">Observations complémentaires</label>
-                    <textarea name="info-complementaires" id="infos" placeholder='Observations complémentaires, commentaire, question...'>
+                    <textarea name="info-complementaires" id="infos" placeholder='Observations complémentaires, commentaire...'>
                     </textarea>
+                </div>
+                <div className='note-container'>
+                    <p>Merci de noter sur 10 votre appréciation du vin</p>
+                    <p className='note-finale'>Note&nbsp;<input type='number' name='note-finale' id='note-finale-input' min="0" max="10" required/><span>&nbsp; /10</span></p>
                 </div>
                 
                 <button type='submit'>Valider</button>

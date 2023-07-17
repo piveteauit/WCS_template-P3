@@ -32,7 +32,7 @@
 .profil-header>button {
     margin-top: 1em;
     font-size: 0.8em;
-    color: rgb(171, 171, 171);
+    color: var(--faded-color);
     background-color: transparent;
     border-color: var(--light-color);
 }
@@ -99,11 +99,11 @@
 .signedup-ateliers-list>li>span {
     margin-top: 0.5em;
     font-size: 0.8em;
-    color: rgb(171, 171, 171);
+    color: var(--faded-color);
 }
 
 .more-ateliers-btn {
-    color: rgb(171, 171, 171);
+    color: var(--faded-color);
 }
 .more-ateliers-btn:hover {
     color: var(--dark-color);
