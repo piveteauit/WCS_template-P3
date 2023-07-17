@@ -31,7 +31,9 @@
 
 .vins-container>h2>span,
 .olfactif>h2>span,
-.gustatif>h2>span {
+.gustatif>h2>span,
+.intensity>h2>span,
+.color>h2>span {
     text-transform: uppercase;
     background-color: var(--lightest-color);
     padding: 0 2em;
@@ -223,18 +225,38 @@
 }
 /********** MENUS DEROULANTS *********/
 
-.menus-deroulants {
+.dropdown-menu {
     display: flex;
     flex-direction: column;
+    width: 90%;
+    gap: 5em;
+    margin: 5em;
 }
-.select-terroir, .select-cepage{
+.select-terroir, .select-cepage {
     margin: 2em;
     display: flex;
     justify-content: space-around;
+    align-items: center;
 }
-
 label {
-    letter-spacing: 2px;
+    font-family: var(--secondary-title-font);
+    letter-spacing: 0.2em;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+select {
+    font-family: var(--main-font);
+    letter-spacing: 0.1em;
+    border-style: none;
+    background-color: white;
+    cursor: pointer;
+    padding: 0.8em;
+    width: 25%;
+    box-shadow: 4px 5px 1em 0em #d2d2d2;
+    transition: 0.3s ease-out;
+}
+select:hover {
+    background-color: #d2d2d2;
 }
 
 /******* INFOS COMPLEMENTAIRES COMMENT  *********/
@@ -244,7 +266,7 @@ label {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0 3em 3em 3em;
+    margin: 3em;
     flex-direction: column;
 }
 .form-infos-complementaires>label {
@@ -298,7 +320,7 @@ label {
 .error-message {
     font-size: x-small;
     color: red;
-    margin-top: 2em;
+    margin: 2em 2em 2em 18em;
 }
 
 
