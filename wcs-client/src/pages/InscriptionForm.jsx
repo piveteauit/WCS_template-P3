@@ -96,22 +96,14 @@ const InscriptionForm = () => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    if (password === samePassword && isAgeValid && formValues.age) {
-      postUser(formValues)
-        .then(function (result) {
-          navigate(`/renseignement`);
-        }) 
-        .catch(function (err) {
-          alert(err.message);
-        });
-    } else if(!isAgeValid && formValues.age) {
-      alert('Inscription refusée : vous devez être majeur pour vous inscrire.')
-    } else if(password !== samePassword) {
-      alert('Veuillez entrer les mêmes mots de passe avant de poursuivre.')
-    }
-      else {
-      alert('Veuillez remplir correctement les champs')
-    }
+
+    postUser(formValues)
+      .then(function (result) {
+        navigate(`/user/${result.id}/renseignement/`);
+      })
+      .catch(function (err) {
+        alert(err.message);
+      });
   };
 
   useEffect(() => {

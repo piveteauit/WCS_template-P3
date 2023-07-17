@@ -10,17 +10,16 @@ import FicheDeRenseignement from './pages/FicheDeRenseignement';
 import FicheDegustation from './pages/FicheDegustation';
 import Creation from './pages/Creation';
 import Toggletest from './pages/Toggletest';
+import AdminDashboard from './pages/AdminDashboard';
 
 function App() {
   return (
     <Router>
       <Routes>
+        <Route path='/admin/*' element={<AdminDashboard />} />
 
-      
-        <Route path='/renseignement/:userId' element={<FicheDeRenseignement />} />
-        <Route path='/renseignement' element={<FicheDeRenseignement />} />
-       
-
+        <Route path='/user/:userId/renseignement' element={<FicheDeRenseignement />} />
+        
         <Route path="/" element={<Home />} />
 
         <Route path="/atelier-creation" element={<AtelierCrea />} />
