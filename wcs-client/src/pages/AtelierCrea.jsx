@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import WineCreation from '../assets/wine-creating.jpg'
 import Navbar from '../components/Navbar';
 import MenuBurger from '../components/MenuBurger';
 import Footer from '../components/Footer';
@@ -9,8 +10,12 @@ const AtelierCrea = () => {
         <div className='atelier-crea-page'>
             <Navbar />
             <MenuBurger />
-
-            <h1>Atelier Création</h1>
+            <div className='atelier-crea-header'>
+                <div className='atelier-crea-img'>
+                    <img src={WineCreation} alt='Atelier Création' />
+                </div>
+                <h1>Atelier Création</h1> 
+            </div>
             <p>Atelier <span className='inovin'>INOVIN</span> pour créer votre propre vin personnalisé.
 
                 Notre atelier <span className='inovin'>INOVIN</span> est unique en son genre : vous apprendrez à créer votre propre vin en sélectionnant les arômes et les saveurs que vous préférez.

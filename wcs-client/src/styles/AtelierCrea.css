@@ -7,6 +7,34 @@
     justify-content: center;
 }
 
+.atelier-crea-header {
+    margin: -5em 0 2em 0;
+    width: 100%;
+    height: 25em;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: -1;
+}
+.atelier-crea-img {
+    width: 100%;
+    height: 100%;
+}
+
+.atelier-crea-img>img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 0 90%;
+}
+
+.atelier-crea-header>h1 {
+    position: absolute;
+    top: 50%;
+    color: var(--light-color);
+}
+
 .atelier-crea-page>p {
     margin-bottom: 1em;
     padding: 1em;
