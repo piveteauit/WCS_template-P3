@@ -7,13 +7,13 @@ import InscriptionForm from './pages/InscriptionForm';
 import Panier from './pages/Panier';
 import './App.css';
 import FicheDeRenseignement from './pages/FicheDeRenseignement';
-import AdminDashboard from './pages/AdminDashboard';
+import AppAdmin from './pages/Dashboard';
 
 function App() {
   return (
     <Router>
       <Routes>
-        <Route path='/admin/*' element={<AdminDashboard />} />
+        <Route path='/admin/*' element={<AppAdmin />} />
 
         <Route path='/user/:userId/renseignement' element={<FicheDeRenseignement />} />
         
