@@ -1,6 +1,6 @@
 import { NavLink, useLocation } from 'react-router-dom';
 import { useState, useEffect, useRef } from 'react';
-import { BsCart } from 'react-icons/bs'
+import { SlUser } from 'react-icons/sl'
 import inovin_logo from '../assets/logo_inovin_blanc.png'
 import '../styles/MenuBurger.css';
 
@@ -47,10 +47,11 @@ const MenuBurger = () => {
                             <NavLink to='/atelier-degustation' className={splitLocation[1] === "atelier-degustation" ? "active" : ""}><li>Atelier Dégustation</li></NavLink>
                             <NavLink to='/notre-histoire' className={splitLocation[1] === "notre-histoire" ? "active" : ""}><li>Notre Histoire</li></NavLink>
                             <NavLink to='/inscription' className={splitLocation[1] === "inscription" ? "active" : ""}><li>S'inscrire</li></NavLink>
+                            <NavLink to='/'><li>Se déconnecter</li></NavLink>
                         </ul>
                     )}
                 </div>
-                <NavLink to="/panier" className={splitLocation[1] === "panier" ? "active" : ""}><BsCart className='panier-icon' /></NavLink>
+                <NavLink to="/profil" className={splitLocation[1] === "profil" ? "active" : ""}><SlUser className='profil-icon' /></NavLink>
             </div>
         </div>
     )

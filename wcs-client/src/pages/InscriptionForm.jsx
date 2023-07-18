@@ -22,7 +22,7 @@ const InscriptionForm = () => {
   const [isAgeValid, setIsAgeValid] = useState(false);
   const [password, setPassword] = useState('');
   const [samePassword, setSamePassword] = useState('');
-  const [totalPrice, setTotalPrice] = useState('');
+  const [totalPrice, setTotalPrice] = useState('0 €');
 
   const [formValues, setFormValues] = useState({
     firstname: '',

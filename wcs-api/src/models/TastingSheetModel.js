@@ -6,9 +6,9 @@ class TastingSheetModel extends BaseModel {
         super('TastingSheet')
     }
 
-    // insert(tastingSheetData) {
-    //     return this.db.query('INSERT INTO colors (date, cepages, notes, bottle_per_cepage_id, taste_id)  VALUES (?, ?, ?, ?, ?)', [tastingSheetData.date, tastingSheetData.cepages, tastingSheetData.notes]);
-    // }
+    insert(tastingSheetData) {
+        return this.db.query('INSERT INTO tasting_sheet (date, cepages, notes)  VALUES (?, ?, ?)', [tastingSheetData.date, tastingSheetData.cepages, tastingSheetData.notes]);
+    }
 }
 
 module.exports = TastingSheetModel;

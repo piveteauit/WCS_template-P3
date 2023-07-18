@@ -32,6 +32,27 @@
 .newsletter-container>input:focus
     {border: 1px solid var(--wine-color);}
 
+.newsletter-container>button {
+  text-decoration: none;
+  text-align: center;
+  width: 10em;
+  padding: 0.5em;
+  background: var(--wine-color);
+  border: none;
+  color: var(--lightest-color);
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  transition: 0.3s ease-out;
+}
+.newsletter-container>button::before,
+.newsletter-container>button::after {
+    background-color: transparent;
+}
+
+
+.newsletter-container>button:hover,
+.inscription-btn:hover { background: var(--highlight-color); }
+
 .contact-info-container {
     width: 33%;
     margin-top: 1em;
