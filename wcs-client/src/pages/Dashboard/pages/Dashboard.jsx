@@ -2,7 +2,7 @@
 function Dashboard() {
     return (
         <div className="Dashboard">
-                Dashboard Admin
+                <h1>Dashboard Admin</h1>
         </div>
     );
 }

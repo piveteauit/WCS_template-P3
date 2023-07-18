@@ -10,10 +10,9 @@ import Dashboard from './pages/Dashboard';
 function AdminDashboard() {
   return (
     <div className='adminApp'>
-        <aside className='sidebar-container'>
+
           <Sidebar/>
-        </aside>
-        <main>
+        <main className='main-container'>
 
             <Routes>
                <Route path='/' element={<Dashboard />} />
