@@ -11,6 +11,7 @@ import FicheDegustation from './pages/FicheDegustation';
 import Creation from './pages/Creation';
 import Toggletest from './pages/Toggletest';
 import AdminDashboard from './pages/AdminDashboard';
+import UserList from './components/Dashboard/UserList';
 
 function App() {
   return (

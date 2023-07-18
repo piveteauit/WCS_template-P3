@@ -9,13 +9,10 @@ class TastesController extends BaseController {
     }
 
     createTastes() {
-        // this.sendJson({ ok : "route ok"})
-        const { name } = this.req.body;
-            console.log(this.req.body);
         this.model
-            .insert ({ name })
-            .then((result) => {
-               return this.res.status(201).send({ id: result.insertId, name })
+            .insert(this.req.body)
+            .then(([result]) => {
+               return this.res.status(201).send({ id: result.insertId, ...this.req.body})
             })
             .catch((err) => {
                 console.error(err);

@@ -4,6 +4,7 @@ import MenuBurger from '../components/MenuBurger'
 import '../styles/FicheDeRenseignement.css'
 import { useEffect, useState } from 'react'
 import { getAll, postTastes } from '../services'
+import { useNavigate,  } from 'react-router-dom';
 
 
 const initialValues = { 
@@ -44,6 +45,7 @@ const isChecked = (id, value) => {
 
 
 const FicheDeRenseignement = () => {
+    const navigate = useNavigate();
     const [formValues, setFormValues] = useState(initialValues)
     const { userId } = useParams ()
     const [cepages, setCepages] = useState([])
@@ -77,13 +79,14 @@ const FicheDeRenseignement = () => {
     const onSubmit = () => {
         
         const error = checkform(formValues)
-        if (error) {
+        if (Object.keys(error).length) {
             setErrorMessage(error);
             return;
         }
-        postTastes({...formValues, userId})
+        postTastes({...formValues, user_id:userId})
+          .then(({data})=> (data))
           .then(function (result) {
-            // navigate(`ficheDeRenseignement/${result.id}`);
+            navigate(`/user/${result.id}/degustation/`);
           })
           .catch(function (err) {
             setErrorMessage(err.message);

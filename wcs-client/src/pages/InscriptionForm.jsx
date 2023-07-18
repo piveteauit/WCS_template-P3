@@ -98,6 +98,7 @@ const InscriptionForm = () => {
     e.preventDefault();
 
     postUser(formValues)
+      .then(({data})=> (data))
       .then(function (result) {
         navigate(`/user/${result.id}/renseignement/`);
       })
