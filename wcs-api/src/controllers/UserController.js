@@ -18,7 +18,8 @@ class UserController extends BaseController {
 
         this.model
             .insert ({ date, firstname, lastname, age, mail, password, })
-            .then((result) => {
+            .then(([result]) => {
+                console.log(result)
                return this.res.status(201).send({ id: result.insertId, date, firstname, lastname, age, mail, password })
             })
             .catch((err) => {
