@@ -67,7 +67,8 @@ function BottleCepage() {
   };
 
   return (
-    <div>
+    <div className='container-BC'>
+      <h1>Bottle Cepage</h1>
       <table className="bottle-table">
         <thead>
           <tr>
@@ -161,9 +162,9 @@ function BottleCepage() {
               </td>
               <td>
                 {row.valid ? (
-                  <button onClick={() => supprimerLigne(row.id)}>Supprimer</button>
+                  <button className="add-button" onClick={() => supprimerLigne(row.id)}>Supprimer</button>
                 ) : (
-                  <button onClick={() => validerChamp(row.id)}>Valider</button>
+                  <button className="add-button" onClick={() => validerChamp(row.id)}>Valider</button>
                 )}
               </td>
             </tr>
@@ -171,7 +172,7 @@ function BottleCepage() {
         </tbody>
       </table>
 
-      <button onClick={ajouterLigne}>Ajouter une ligne</button>
+      <button className="add-button" onClick={ajouterLigne}>Ajouter un Cépage</button>
     </div>
   );
 }
