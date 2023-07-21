@@ -7,17 +7,19 @@ import InscriptionForm from './pages/InscriptionForm';
 import Profil from './pages/Profil';
 import './App.css';
 import FicheDeRenseignement from './pages/FicheDeRenseignement';
+
+import AppAdmin from './pages/Dashboard';
+
 import FicheDegustation from './pages/FicheDegustation';
 import Creation from './pages/Creation';
 import Toggletest from './pages/Toggletest';
-import AdminDashboard from './pages/AdminDashboard';
-import UserList from './components/Dashboard/UserList';
+
 
 function App() {
   return (
     <Router>
       <Routes>
-        <Route path='/admin/*' element={<AdminDashboard />} />
+        <Route path='/admin/*' element={<AppAdmin />} />
 
         <Route path='/user/:userId/renseignement' element={<FicheDeRenseignement />} />
         
