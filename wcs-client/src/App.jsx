@@ -7,9 +7,7 @@ import InscriptionForm from './pages/InscriptionForm';
 import Profil from './pages/Profil';
 import './App.css';
 import FicheDeRenseignement from './pages/FicheDeRenseignement';
-
 import AppAdmin from './pages/Dashboard';
-
 import FicheDegustation from './pages/FicheDegustation';
 import Creation from './pages/Creation';
 import Toggletest from './pages/Toggletest';
