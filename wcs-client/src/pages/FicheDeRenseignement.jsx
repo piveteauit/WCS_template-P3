@@ -91,7 +91,7 @@ const checkform = (formValues) => {
         postTastes({...formValues, user_id:userId})
           .then(({data})=> (data))
           .then(function (result) {
-            navigate(`/user/${result.id}/degustation/`);
+            navigate(`/user/${result.user_id}/degustation/`);
           })
           .catch(function (err) {
             setErrorMessage(err.message);

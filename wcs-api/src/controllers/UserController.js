@@ -51,20 +51,23 @@ class UserController extends BaseController {
       }
 
     deleteUser() {
-        const id = this.req.params.id
-
+        const id = this.req.params.id;
+        console.log('User ID to delete:', id);
+      
         this.model.deleteUser(id)
-            .then(([result]) => {
-                if (result.affectedRows === 0) {
-                    this.res.status(404).send("Not Found");
-                } else {
-                    this.res.sendStatus(204);
-                }
-            })
-            .catch((err) => {
-                this.res.status(500).send("Error deleting the user");
-            });
-    }
+          .then(([result]) => {
+            console.log('Delete result:', result);
+            if (result.affectedRows === 0) {
+              this.res.status(404).send("Not Found");
+            } else {
+              this.res.sendStatus(204);
+            }
+          })
+          .catch((err) => {
+            console.error('Error deleting the user:', err);
+            this.res.status(500).send("Error deleting the user");
+          });
+      }
 
 };
 

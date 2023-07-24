@@ -25,7 +25,7 @@ function App() {
 
         <Route path="/atelier-creation" element={<AtelierCrea />} />
         <Route path="/atelier-degustation" element={<AtelierDegus />} />
-        <Route path='/degustation' element={<FicheDegustation />} />
+        <Route path='/user/:userId/degustation' element={<FicheDegustation />} />
         <Route path='/creation' element={<Creation />} />
         <Route path="/notre-histoire" element={<NotreHistoire />} />
         <Route path="/inscription" element={<InscriptionForm />} />
