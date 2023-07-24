@@ -1,19 +1,28 @@
 import React, { useState, useEffect } from 'react';
 import '../../../styles/UserList.css';
 import axios from 'axios';
+import { getAll } from '../../../services';
 
 function BottleCepage() {
-  const [ref, setRef] = useState([]);
-  const [cepage, setCepages] = useState([]);
+  const [refs, setRefs] = useState([]);
+  const [cepages, setCepages] = useState([]);
   const [terroirs, setTerroirs] = useState([]);
   const [colors, setColors] = useState([]);
   const [years, setyears] = useState([]);
   const [operators, setOperators] = useState([]);
-  const [intensity, setIntensity] = useState([]);
+  const [intensities, setIntensities] = useState([]);
   
-
 }
 
+// useEffect(() => {
+//   getAll("refs")
+//   getAll("cepages")
+//   getAll("terroirs")
+//   getAll("colors")
+//   getAll("years")
+//   getAll("operators")
+//   getAll("cepages")
+// })
 
 
 
