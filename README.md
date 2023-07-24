@@ -12,3 +12,9 @@ Route2
   main
   route
   toto
+
+
+  Creation.jsx = tasting result
+  Fiche de renseignement = taste
+  Fiche de degustation = tasting sheet
+  

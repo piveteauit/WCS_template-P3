@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './BottleCepage.css'; // Fichier de styles CSS pour personnaliser l'apparence du tableau
 import axios from 'axios';
+import '../../../styles/UserList.css';
 
 function BottleCepage() {
   const [rows, setRows] = useState([
