@@ -1,7 +1,7 @@
 require('dotenv').config();
 
 const express = require('express');
-const userRouter = require('./src/routes/UserRoutes');
+const userRouter = require('./src/routes/userRoutes');
 const tastesRouter = require ('./src/routes/TastesRoutes')
 const colorsRouter = require('./src/routes/ColorsRoutes');
 const cepagesRouter = require('./src/routes/CepagesRoutes');
