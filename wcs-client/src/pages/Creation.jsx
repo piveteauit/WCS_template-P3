@@ -18,9 +18,14 @@ const Creation = () => {
                 <h3>Bouteille par cépage</h3>
                 <ul className='bouteilles-list'>
                     <li>Bouteille 1 <span>30%</span></li>
+                    <li>Bouteille 2 <span>60%</span></li>
+                    <li>Bouteille 3 <span>10%</span></li>
                 </ul>
             </div>
-            <h2><span>Solution d'assemblage</span></h2>
+            <div className='creation-solution'>
+                <h2><span>Solution d'assemblage</span></h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error ipsam nam voluptatibus consequatur a repellat, quibusdam quia non voluptate? Doloribus sed sunt animi cum quam architecto corporis sequi eligendi quo.</p>
+            </div>
             <Footer />
         </div>
     )
