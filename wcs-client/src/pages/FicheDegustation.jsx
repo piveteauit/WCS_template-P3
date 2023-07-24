@@ -3,7 +3,7 @@ import Navbar from '../components/Navbar'
 import MenuBurger from '../components/MenuBurger'
 import '../styles/FicheDegustation.css'
 import React, { useState, useEffect } from 'react';
-import { getAll, postTastes } from '../services'
+import { getAll } from '../services'
 
 
 const initialValues = {
