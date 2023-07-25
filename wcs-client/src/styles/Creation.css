@@ -8,7 +8,8 @@
 }
 
 .creation-header,
-.creation-container {
+.creation-container,
+.creation-solution {
     width: 100%;
     padding: 1em;
     display: flex;
@@ -19,7 +20,8 @@
 
 .creation-page>h2,
 .creation-header>h2,
-.creation-container>h2 {
+.creation-container>h2,
+.creation-solution>h2 {
     width: 100%;
     text-align: center;
     border-bottom: 1px solid var(--dark-color);
@@ -29,7 +31,8 @@
 
 .creation-page>h2>span,
 .creation-header>h2>span,
-.creation-container>h2>span {
+.creation-container>h2>span, 
+.creation-solution>h2>span {
     background-color: var(--lightest-color);
     padding: 0 2em;
     font-family: var(--secondary-title-font);

@@ -12,6 +12,7 @@ function UserList() {
   const [aromas, setAromas] = useState([]);
   const [intensities, setIntensities] = useState([]);
   const [flavors, setFlavors] = useState([]);
+  const [tastingsheet, settastingsheet] = useState([]);
 
 // RECUPERER LES NAMES USERS PAR LEUR ID
 
@@ -24,9 +25,10 @@ function UserList() {
       getAll("cepages"),
       getAll("aromas"),
       getAll("intensity"),
-      getAll("flavors")
+      getAll("flavors"),
+      getAll("tastingsheet")
     ])
-      .then(([usersData, tastesData, colorsData, terroirsData, cepagesData, aromasData, intensitiesData, flavorsData]) => {
+      .then(([usersData, tastesData, colorsData, terroirsData, cepagesData, aromasData, intensitiesData, flavorsData, tastingsheetData]) => {
         
         setUsers(usersData);
         setTastes(tastesData);
@@ -36,10 +38,11 @@ function UserList() {
         setAromas(aromasData);
         setIntensities(intensitiesData);
         setFlavors(flavorsData);
+        settastingsheet(tastingsheetData);
       })
       .catch(error => console.log(error));
   }, []);
-
+    console.log(tastingsheet);
 
   // Fonction pour formater la date
   const formatDate = (dateString) => {
@@ -80,7 +83,7 @@ function UserList() {
 
   return (
     <div>
-      <h1>UserList</h1>
+      <h1>User-List</h1>
       <table className='table-style'>
         <thead>
           <tr>
@@ -103,7 +106,7 @@ function UserList() {
         </tbody>
       </table>
 
-      <h1>TastesList</h1>
+      <h1>Tastes-List</h1>
       <table className='table-style'>
         <thead>
           <tr>
@@ -128,6 +131,107 @@ function UserList() {
               <td>{getAromaNameById(taste.aromas_id)}</td>
               <td>{getIntensityNameById(taste.intensity_id)}</td>
               <td>{getFlavorNameById(taste.flavors_id)}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+      <h1>Tasting-Sheet</h1>
+      <table className='table-style'>
+        <thead>
+          <tr>
+            <th>ID de l'utilisateur</th>
+            <th>ID Fiche Dégustation</th>
+            <th>Date</th>
+            <th>Couleur</th>
+            <th>Intensité</th>
+            <th>Arômes</th>
+            <th>Saveur</th>
+            <th>Cépage</th>
+            <th>Terroir</th>
+            <th>Note</th>
+          </tr>
+        </thead>
+        <tbody>
+            {/* <tr>
+              <td> 20 </td>
+              <td> 1 </td>
+              <td> 31/07/2023 </td>
+              <td> Rouge </td>
+              <td> Moyen </td>
+              <td> Epicé </td>
+              <td> Long en bouche </td>
+              <td> Pinot Noir </td>
+              <td> Sud-Ouest </td>
+              <td> 7/10 </td>
+            </tr>
+            <tr>
+              <td> 20 </td>
+              <td> 2 </td>
+              <td> 31/07/2023 </td>
+              <td> Rouge </td>
+              <td> Moyen </td>
+              <td> Boisé </td>
+              <td> Tanique </td>
+              <td> Merlot </td>
+              <td> Nord-Est </td>
+              <td> 4/10 </td>
+            </tr>
+            <tr>
+              <td> 20 </td>
+              <td> 3 </td>
+              <td> 31/07/2023 </td>
+              <td> Rouge </td>
+              <td> Fort </td>
+              <td> Fruité </td>
+              <td> Long en bouche </td>
+              <td> Malbec </td>
+              <td> Sud-Ouest </td>
+              <td> 8/10 </td>
+            </tr> */}
+          {tastingsheet.map(tasting_sheet => (
+            <tr key={tasting_sheet.id}>
+              <td>{tasting_sheet.id}</td>
+              <td>{getColorNameById(tasting_sheet.date_id)}</td>
+              <td>{getColorNameById(tasting_sheet.intensity_id)}</td>
+              <td>{getColorNameById(tasting_sheet.color_id)}</td>
+              <td>{getAromaNameById(tasting_sheet.aromas_id)}</td>
+              <td>{getFlavorNameById(tasting_sheet.flavors_id)}</td>
+              <td>{getTerroirNameById(tasting_sheet.terroir_id)}</td>
+              <td>{getCepageNameById(tasting_sheet.cepages_id)}</td>
+              <td>{getFlavorNameById(tasting_sheet.notes_id)}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+      <h1>Tasting-Result</h1>
+      <table className='table-style'>
+        <thead>
+          <tr>
+            <th>ID de l'utilisateur</th>
+            <th>Nom de l'utilisateur</th>
+            <th>Bouteille 1 </th>
+            <th>Bouteille 2 </th>
+            <th>Bouteille 3 </th>
+            <th>Solution</th>
+          </tr>
+        </thead>
+        <tbody>
+          {/* <tr>
+              <td>20</td>
+              <td>Major Tom</td>
+              <td> 7/10 </td>
+              <td> 4/10 </td>
+              <td> 8/10 </td>
+              <td>Solution</td>
+            </tr> */}
+          {tastes.map(taste => (
+            <tr key={taste.id}>
+              <td>{taste.user_id}</td>
+              <td>{getUserNameById(taste.user_id)}</td>
+              <td>{getColorNameById(taste.cepage_id)}</td>
+              <td>{getTerroirNameById(taste.color_id)}</td>
+              <td>{getCepageNameById(taste.cepage_id)}</td>
+              <td>{getAromaNameById(taste.aromas_id)}</td>
             </tr>
           ))}
         </tbody>

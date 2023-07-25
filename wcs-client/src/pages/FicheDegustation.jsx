@@ -77,13 +77,13 @@ const FicheDegustation = () => {
 
 
 
-    // const onSubmit = () => {
+    const onSubmit = () => {
 
-    //     const error = checkform(formValues)
-    //     if (error) {
-    //         setErrorMessage(error);
-    //         return;
-    //     }
+        const error = checkform(formValues)
+        if (error) {
+            setErrorMessage(error);
+            return;
+        }
     //     postTastes({ ...formValues, userId })
     //         .then(function (result) {
     //     // navigate(`ficheDeRenseignement/${result.id}`);
@@ -92,7 +92,7 @@ const FicheDegustation = () => {
     //     .catch(function (err) {
     //             setErrorMessage(err.message);
     //         })
-    //     };
+        };
 
 
 
@@ -101,7 +101,7 @@ const FicheDegustation = () => {
             <Navbar />
             <MenuBurger />
 
-            <form className='renseignement-container'>
+            <form className='renseignement-container' onSubmit={onSubmit}>
 
                 <h1>FICHE DE DEGUSTATION</h1>
 

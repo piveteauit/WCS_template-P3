@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import '../../../styles/UserList.css';
 import { getAll } from '../../../services';
+import '../../../styles/UserList.css';
 
 function BottleCepage() {
   const [bottleCepages, setBottleCepages] = useState([]);
