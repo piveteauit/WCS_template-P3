@@ -39,13 +39,8 @@ APIRouter.use('/cepages', cepagesRouter);
 APIRouter.use('/roles', rolesRouter);
 APIRouter.use('/terroirs', terroirsRouter);
 APIRouter.use('/operators', operatorsRouter);
-<<<<<<< HEAD
 APIRouter.use('/bottlepercepage', bottlePerCepageRouter);
 APIRouter.use('/tastingSheet', tastingSheetRouter);
-=======
-APIRouter.use('/bottlePerCepage', bottlePerCepageRouter);
-APIRouter.use('/tastingsheet', tastingSheetRouter);
->>>>>>> dev
 APIRouter.use('/bottle', bottleRouter);
 APIRouter.use('/tastingResult', tastingResultRouter);
 APIRouter.use('/workshop', workshopRouter);
