@@ -8,6 +8,7 @@ class BottlePerCepageController extends BaseController {
         this.model = new BottlePerCepageModel();
     }
 
+
 }
 
 module.exports = BottlePerCepageController;

@@ -1,30 +1,61 @@
 import React, { useState, useEffect } from 'react';
 import '../../../styles/UserList.css';
-import axios from 'axios';
 import { getAll } from '../../../services';
 
 function BottleCepage() {
-  const [refs, setRefs] = useState([]);
-  const [cepages, setCepages] = useState([]);
-  const [terroirs, setTerroirs] = useState([]);
-  const [colors, setColors] = useState([]);
-  const [years, setyears] = useState([]);
-  const [operators, setOperators] = useState([]);
-  const [intensities, setIntensities] = useState([]);
+  const [bottleCepages, setBottleCepages] = useState([]);
+
+useEffect(() => {
+  Promise.all([
+    getAll("bottlepercepage"),
+])
+
+  .then(([bottleCepageData]) => {
+
+    setBottleCepages(bottleCepageData);
+
+  }) 
+  .catch(error => console.log(error));
   
-}
-
-// useEffect(() => {
-//   getAll("refs")
-//   getAll("cepages")
-//   getAll("terroirs")
-//   getAll("colors")
-//   getAll("years")
-//   getAll("operators")
-//   getAll("cepages")
-// })
+}, []);
 
 
+
+
+
+return (
+  <div>
+    <h1>Bottle-Cepage</h1>
+    <table className='table-style'> 
+      <thead>
+        <tr>
+          <th>Bottle Cepage Id</th>
+          <th>REF</th>
+          <th>Colors</th>
+          <th>cepages</th>
+          <th>Terroirs</th>
+          <th>Operators</th>
+          <th>Years</th>
+          <th>Intensity</th>
+        </tr>
+      </thead>
+      <tbody>
+        {bottleCepages.map(b => (
+          <tr key={b.id}>
+            <td>{b.id} </td>
+            <td>{b.ref}</td>
+            <td>{b.cepage}</td>
+            <td>{b.terroir}</td>
+            <td>{b.color}</td>
+            <td>{b.year}</td>
+            <td>{b.operator}</td>
+            <td>{b.intensity}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+)}
 
 
   // const [rows, setRows] = useState([
