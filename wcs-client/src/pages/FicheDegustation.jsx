@@ -73,10 +73,9 @@ const FicheDegustation = () => {
             ...formValues,
             [el.target.name]: value,
         });
-        console.log(formValues);
     }
 
-    console.log(formValues);
+
 
     // const onSubmit = () => {
 
@@ -88,10 +87,12 @@ const FicheDegustation = () => {
     //     postTastes({ ...formValues, userId })
     //         .then(function (result) {
     //     // navigate(`ficheDeRenseignement/${result.id}`);
+    //     console.log(result)
     // })
     //     .catch(function (err) {
     //             setErrorMessage(err.message);
     //         })
+    //     };
 
 
 
@@ -214,6 +215,3 @@ const FicheDegustation = () => {
 };
 
 export default FicheDegustation;
-
-
-
