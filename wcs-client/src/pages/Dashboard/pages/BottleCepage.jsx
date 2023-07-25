@@ -7,7 +7,7 @@ function BottleCepage() {
 
 useEffect(() => {
   Promise.all([
-    getAll("bottlepercepage"),
+    getAll("bottlepercepage")
 ])
 
   .then(([bottleCepageData]) => {
