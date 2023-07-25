@@ -17,7 +17,7 @@ td {
   letter-spacing: 1px;
 }
 th {
-    background-color: var(--wine-color);
+    background-color: var(--highlight-color);
     color: var(--lightest-color);
     font-weight: 100; 
     letter-spacing: 2px;

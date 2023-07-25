@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import '../../../styles/UserList.css';
 import axios from 'axios';
 import { getAll } from '../../../services';
+import '../../../styles/UserList.css';
 
 function BottleCepage() {
   const [refs, setRefs] = useState([]);
