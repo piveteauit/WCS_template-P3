@@ -40,7 +40,7 @@ APIRouter.use('/roles', rolesRouter);
 APIRouter.use('/terroirs', terroirsRouter);
 APIRouter.use('/operators', operatorsRouter);
 APIRouter.use('/bottlepercepage', bottlePerCepageRouter);
-APIRouter.use('/tastingSheet', tastingSheetRouter);
+APIRouter.use('/tastingsheet', tastingSheetRouter);
 APIRouter.use('/bottle', bottleRouter);
 APIRouter.use('/tastingResult', tastingResultRouter);
 APIRouter.use('/workshop', workshopRouter);

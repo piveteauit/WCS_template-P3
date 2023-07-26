@@ -13,7 +13,9 @@ class TastesController extends BaseController {
             .insert(this.req.body)
             .then(([result]) => {
                 //TODO: insert 3 tastingSheet
-               return this.res.status(201).send(result)
+               return this.res.status(201).send({
+                id:result.insertId
+               })
             })
             .catch((err) => {
                 console.error(err);

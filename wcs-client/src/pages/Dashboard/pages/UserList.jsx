@@ -10,8 +10,9 @@ function UserList() {
   const [terroirs, setTerroirs] = useState([]);
   const [cepages, setCepages] = useState([]);
   const [aromas, setAromas] = useState([]);
-  const [intensities, setIntensities] = useState([]);
+  const [intensity, setIntensity] = useState([]);
   const [flavors, setFlavors] = useState([]);
+  const [dates, setDates] = useState([]);
   const [tastingsheet, settastingsheet] = useState([]);
 
 // RECUPERER LES NAMES USERS PAR LEUR ID
@@ -26,18 +27,20 @@ function UserList() {
       getAll("aromas"),
       getAll("intensity"),
       getAll("flavors"),
+      getAll("dates"),
       getAll("tastingsheet")
     ])
-      .then(([usersData, tastesData, colorsData, terroirsData, cepagesData, aromasData, intensitiesData, flavorsData, tastingsheetData]) => {
-        
+      .then(([usersData, tastesData, colorsData, terroirsData, cepagesData, aromasData, intensityData, flavorsData, datesData, tastingsheetData]) => {
+       console.log(intensityData); 
         setUsers(usersData);
         setTastes(tastesData);
         setColors(colorsData);
         setTerroirs(terroirsData);
         setCepages(cepagesData);
         setAromas(aromasData);
-        setIntensities(intensitiesData);
+        setIntensity(intensityData);
         setFlavors(flavorsData);
+        // setDates(datesData);
         settastingsheet(tastingsheetData);
       })
       .catch(error => console.log(error));
@@ -73,16 +76,20 @@ function UserList() {
     return cepage ? `${cepage.name}` : 'N/A';
   }
   function getIntensityNameById(intensityId) {
-    const intensity = intensities.find(intensity => intensity.id === intensityId);
-    return intensity ? `${intensity.name}` : 'N/A';
+    const foundintensity = intensity.find(intensity => intensity.id === intensityId);
+    return foundintensity ? `${foundintensity.name}` : 'N/A';
   }
   function getFlavorNameById(flavorId) {
     const flavor = flavors.find(flavor => flavor.id === flavorId);
     return flavor ? `${flavor.name}` : 'N/A';
   }
+  function getDateNameById(dateId) {
+    const date = dates.find(date => date.id === dateId);
+    return date ? `${date.name}` : 'N/A';
+  }
 
   return (
-    <div>
+    <div className='users-list-page'>
       <h1>User-List</h1>
       <table className='table-style'>
         <thead>
@@ -152,53 +159,18 @@ function UserList() {
           </tr>
         </thead>
         <tbody>
-            {/* <tr>
-              <td> 20 </td>
-              <td> 1 </td>
-              <td> 31/07/2023 </td>
-              <td> Rouge </td>
-              <td> Moyen </td>
-              <td> Epicé </td>
-              <td> Long en bouche </td>
-              <td> Pinot Noir </td>
-              <td> Sud-Ouest </td>
-              <td> 7/10 </td>
-            </tr>
-            <tr>
-              <td> 20 </td>
-              <td> 2 </td>
-              <td> 31/07/2023 </td>
-              <td> Rouge </td>
-              <td> Moyen </td>
-              <td> Boisé </td>
-              <td> Tanique </td>
-              <td> Merlot </td>
-              <td> Nord-Est </td>
-              <td> 4/10 </td>
-            </tr>
-            <tr>
-              <td> 20 </td>
-              <td> 3 </td>
-              <td> 31/07/2023 </td>
-              <td> Rouge </td>
-              <td> Fort </td>
-              <td> Fruité </td>
-              <td> Long en bouche </td>
-              <td> Malbec </td>
-              <td> Sud-Ouest </td>
-              <td> 8/10 </td>
-            </tr> */}
           {tastingsheet.map(tasting_sheet => (
             <tr key={tasting_sheet.id}>
+              <td>{tasting_sheet.user_id}</td>
               <td>{tasting_sheet.id}</td>
-              <td>{getColorNameById(tasting_sheet.date_id)}</td>
-              <td>{getColorNameById(tasting_sheet.intensity_id)}</td>
+              <td>{getDateNameById(tasting_sheet.date_id)}</td>
               <td>{getColorNameById(tasting_sheet.color_id)}</td>
+              <td>{getIntensityNameById(tasting_sheet.intensity_id)}</td>
               <td>{getAromaNameById(tasting_sheet.aromas_id)}</td>
               <td>{getFlavorNameById(tasting_sheet.flavors_id)}</td>
-              <td>{getTerroirNameById(tasting_sheet.terroir_id)}</td>
               <td>{getCepageNameById(tasting_sheet.cepages_id)}</td>
-              <td>{getFlavorNameById(tasting_sheet.notes_id)}</td>
+              <td>{getTerroirNameById(tasting_sheet.terroir_id)}</td>
+              <td>{tasting_sheet.notes}</td>
             </tr>
           ))}
         </tbody>
@@ -216,22 +188,16 @@ function UserList() {
           </tr>
         </thead>
         <tbody>
-          {/* <tr>
-              <td>20</td>
-              <td>Major Tom</td>
-              <td> 7/10 </td>
-              <td> 4/10 </td>
-              <td> 8/10 </td>
-              <td>Solution</td>
-            </tr> */}
-          {tastes.map(taste => (
-            <tr key={taste.id}>
-              <td>{taste.user_id}</td>
-              <td>{getUserNameById(taste.user_id)}</td>
-              <td>{getColorNameById(taste.cepage_id)}</td>
-              <td>{getTerroirNameById(taste.color_id)}</td>
-              <td>{getCepageNameById(taste.cepage_id)}</td>
-              <td>{getAromaNameById(taste.aromas_id)}</td>
+          {tastingsheet.map(tasting_sheet => (
+            <tr key={tasting_sheet.id}>
+              <td>{tasting_sheet.user_id}</td>
+              <td>{getUserNameById(tasting_sheet.user_id)}</td>
+              {/* <td>{getNoteNameById(tasting_sheet.note_id)}</td> */}
+              {/* <td>{getNoteNameById(tasting_sheet.note_id)}</td> */}
+              <td>{tasting_sheet.notes}</td>
+              <td>{tasting_sheet.notes}</td>
+              <td>{tasting_sheet.notes}</td>
+              {/* <td>{getAromaNameById(tasting_sheet.notes_id)}</td> */}
             </tr>
           ))}
         </tbody>

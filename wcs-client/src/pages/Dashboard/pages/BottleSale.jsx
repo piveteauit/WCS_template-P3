@@ -6,7 +6,7 @@ import '../../../styles/UserList.css';
 function BottleSale() {
   
   return (
-    <div>
+    <div className='users-list-page'>
       <h1>Bottle Sale</h1>
       <table className='table-style'>
         <thead>

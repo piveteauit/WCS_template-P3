@@ -7,7 +7,7 @@ class UserModel extends BaseModel {
     }
 
     insert(userData) {
-        return this.db.query('INSERT INTO users (role_id, date, firstname, lastname, age, mail, password)  VALUES (5, ?, ?, ?, ?, ?, ?)', [ userData.date, userData.firstname, userData.lastname, userData.age, userData.mail, userData.password]);
+        return this.db.query('INSERT INTO users (role_id, date, firstname, lastname, age, mail, password)  VALUES (2, ?, ?, ?, ?, ?, ?)', [ userData.date, userData.firstname, userData.lastname, userData.age, userData.mail, userData.password]);
     }
 
     deleteUser(id) {

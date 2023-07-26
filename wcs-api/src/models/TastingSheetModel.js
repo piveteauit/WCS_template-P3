@@ -3,7 +3,7 @@ const BaseModel = require("./BaseModel");
 class TastingSheetModel extends BaseModel {
 
     constructor() {
-        super('TastingSheet')
+        super('tasting_sheet')
     }
 
     insert(tastingSheetData) {

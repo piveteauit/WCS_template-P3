@@ -14,3 +14,7 @@ export function getAll(ressources) {
     .then(({data}) => data)
     .catch(error => error)
 }
+
+export function putTastingSheet(values) {
+    return axios.put("/tastingsheet", values)
+}
