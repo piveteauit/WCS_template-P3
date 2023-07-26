@@ -3,6 +3,7 @@ import MenuBurger from '../components/MenuBurger';
 import Footer from '../components/Footer';
 import '../styles/Creation.css';
 
+
 const Creation = () => {
     return (
         <div className='creation-page'>
@@ -17,9 +18,9 @@ const Creation = () => {
                 <h2><span>Dosage</span></h2>
                 <h3>Bouteille par cépage</h3>
                 <ul className='bouteilles-list'>
-                    <li>Bouteille 1 <span>40%</span></li>
-                    <li>Bouteille 2 <span>10%</span></li>
-                    <li>Bouteille 3 <span>50%</span></li>
+                    <li>Bouteille 1 <span>4</span></li>
+                    <li>Bouteille 2 <span>6</span></li>
+                    <li>Bouteille 3 <span>8</span></li>
                 </ul>
             </div>
             <div className='creation-solution'>

@@ -21,11 +21,15 @@ useEffect(() => {
 }, []);
 
 
-
+const handleDelete = (id) => {
+  // Implémentez ici la fonction de suppression
+  // Vous pouvez utiliser le paramètre 'id' pour identifier quelle ligne supprimer
+  // Par exemple, vous pouvez appeler une API pour supprimer l'enregistrement depuis le backend
+};
 
 
 return (
-  <div>
+  <div className='users-list-page'>
     <h1>Bottle-Cepage</h1>
     <table className='table-style'> 
       <thead>
@@ -38,6 +42,7 @@ return (
           <th>Operators</th>
           <th>Years</th>
           <th>Intensity</th>
+          <th>SUPRIMER</th>
         </tr>
       </thead>
       <tbody>
@@ -45,16 +50,22 @@ return (
           <tr key={b.id}>
             <td>{b.id} </td>
             <td>{b.ref}</td>
+            <td>{b.color}</td>
             <td>{b.cepage}</td>
             <td>{b.terroir}</td>
-            <td>{b.color}</td>
-            <td>{b.year}</td>
             <td>{b.operator}</td>
+            <td>{b.year}</td>
             <td>{b.intensity}</td>
+            <td>
+                <button onClick={() => handleDelete(b.id)}>Supprimer</button>
+              </td>
           </tr>
         ))}
       </tbody>
     </table>
+      <div className="add-button">
+        <button onClick={''}>Ajouter un Cépage</button>
+      </div>
   </div>
 )}
 

@@ -3,25 +3,22 @@ import Navbar from '../components/Navbar'
 import MenuBurger from '../components/MenuBurger'
 import '../styles/FicheDegustation.css'
 import React, { useState, useEffect } from 'react';
-import { getAll } from '../services'
+import { getAll, putTastingSheet } from '../services'
+
 
 
 const initialValues = {
     color_id: null,
     intensity_id: null,
-    terroir_id: null,
-    cepage_id: null,
     aromas_id: null,
     flavors_id: null,
-    tastingSheet_id: null,
+    tastingSheet_id: null,//note//
 
 }
 
 const errorMessage = {
     color_id: "Couleur obligatoire",
     intensity_id: "Intensité obligatoire",
-    terroir_id: "Terroir obligatoire",
-    cepage_id: "cepage obligatoire",
     aromas_id: "Arôme obligatoire",
     flavors_id: "Goût obligatoire",
     tastingSheet_id: "Note obligatoire"
@@ -40,21 +37,23 @@ const checkform = (formValues) => {
 }
 
 const isChecked = (id, value) => {
-    return id == value
+    return id === value
 }
 
 
 const FicheDegustation = () => {
     const [formValues, setFormValues] = useState(initialValues)
-    const { userId } = useParams()
+    const { userId, tasteId } = useParams()
     const [cepages, setCepages] = useState([])
     const [terroirs, setTerroirs] = useState([])
     const [colors, setColors] = useState([])
     const [intensity, setIntensity] = useState([])
     const [aromas, setAromas] = useState([])
     const [flavors, setFlavors] = useState([])
-    const [errorMessage, setErrorMessage] = useState({});
-    const [tastingSheet, setTastingSheet] = useState([]);
+    const [notes, setNotes] = useState()
+    const [errorMessage, setErrorMessage] = useState({})
+    const [tastingSheet, setTastingSheet] = useState([])
+    const navigate = useNavigate()
 
     useEffect(function () {
         getAll("cepages").then(setCepages)
@@ -63,35 +62,37 @@ const FicheDegustation = () => {
         getAll("intensity").then(setIntensity)
         getAll("aromas").then(setAromas)
         getAll("flavors").then(setFlavors)
+        getAll("notes").then(setNotes)
         getAll("tastingSheet").then(setTastingSheet)
     }, [])
 
     const onChange = (el) => {
 
-        let value = (el.target.type != "checkbox" || el.target.checked || typeof el.target.checked != "boolean") ? el.target.value : false
+        let value = (el.target.type !== "checkbox" || el.target.checked || typeof el.target.checked != "boolean") ? el.target.value : false
         setFormValues({
             ...formValues,
             [el.target.name]: value,
         });
-    }
+    };
 
 
 
-    const onSubmit = () => {
-
+    const onSubmit = (evt) => {
+        evt.preventDefault()
         const error = checkform(formValues)
         if (error) {
             setErrorMessage(error);
             return;
         }
-    //     postTastes({ ...formValues, userId })
-    //         .then(function (result) {
-    //     // navigate(`ficheDeRenseignement/${result.id}`);
-    //     console.log(result)
-    // })
-    //     .catch(function (err) {
-    //             setErrorMessage(err.message);
-    //         })
+        putTastingSheet({ ...formValues, userId })
+            .then(function (result) {
+                if (result.id)return navigate(`/user/${userId}/degustation/${result.id}`);
+                alert ('Vous avez terminé. Vous allez être redirigé ')
+        console.log(result)
+    })
+        .catch(function (err) {
+                setErrorMessage(err.message);
+            })
         };
 
 
@@ -171,34 +172,6 @@ const FicheDegustation = () => {
                 </div>
 
 
-                <div className="menus-deroulants">
-                    <div className='select-cepage'>
-                        <label htmlFor="atelier">CHOIX DU CEPAGE</label>
-                        <select onChange={onChange} name="cepage_id" required>
-                            <option value="">
-                                Sélection du cépage
-                            </option>
-                            {cepages.map((c) => (
-                                <option key={`cepages${c.id}`} value={c.id}>{c.name}</option>
-
-                            ))}
-                        </select>
-                    </div>
-
-                    <div className='select-terroir'>
-                        <label htmlFor="atelier">CHOIX DU TERROIR</label>
-                        <select onChange={onChange} name="terroir_id" required>
-                            <option value="">
-                                Sélection du terroir
-                            </option>
-                            {terroirs.map((t) => (
-                                <option key={`terroir${t.id}`} value={t.id}>{t.name}</option>
-
-                            ))}
-                        </select>
-                    </div>
-
-                </div>
 
                 <div className='note-container'>
                     <p>Merci de noter sur 10 votre appréciation du vin</p>
