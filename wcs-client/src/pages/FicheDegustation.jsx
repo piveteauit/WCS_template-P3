@@ -37,7 +37,7 @@ const checkform = (formValues) => {
 }
 
 const isChecked = (id, value) => {
-    return id === value
+    return id == value
 }
 
 
