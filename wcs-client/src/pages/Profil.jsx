@@ -12,20 +12,20 @@ const Profil = () => {
             <MenuBurger />
             <h1>Votre profil</h1>
             <div className='profil-header'>
-                <h2><span>John Doe</span></h2>
-                <h3>34 ans</h3>
+                <h2><span>Picaut Axel</span></h2>
+                <h3>33 ans</h3>
                 <button>Modifier le profil</button>
             </div>
             
             <div className='options-container'>
                 <div className='option-container'>
-                    <Link to='/renseignement'><h2>Gérer les préférences</h2></Link> 
-                    <Link to='/renseignement'><IoMdArrowDropright className='arrow-icon'/></Link>
+                    <Link to='/user/:userId/renseignement'><h2>Gérer les préférences</h2></Link> 
+                    <Link to='/user/:userId/renseignement'><IoMdArrowDropright className='arrow-icon'/></Link>
                 </div>
 
                 <div className='option-container'>
-                    <Link to=''><h2>Mes créations</h2></Link>
-                    <Link to=''><IoMdArrowDropright className='arrow-icon'/></Link>
+                    <Link to='/creation'><h2>Mes créations</h2></Link>
+                    <Link to='/creation'><IoMdArrowDropright className='arrow-icon'/></Link>
                 </div>
 
                 <div className='option-container'>
@@ -35,7 +35,7 @@ const Profil = () => {
                             <span>A venir : 18/08/2023</span>
                         </li>
                         <li>Atelier Dégustation 
-                            <span>Date à venir</span>
+                        <span>A venir : 29/07/2023</span>
                         </li>
                         <li>Atelier Dégustation 
                             <span>Passé : 21/05/2023</span>

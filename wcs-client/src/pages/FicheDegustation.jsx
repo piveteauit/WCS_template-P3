@@ -190,8 +190,10 @@ const FicheDegustation = () => {
                         
                         <span>&nbsp; /10</span></p>
                 </div>
-
+                <a href="votre_lien_cible.html" class="lien-bouton">
                 <button type='submit'>Valider</button>
+                </a>
+
             </form>
 
         </div>

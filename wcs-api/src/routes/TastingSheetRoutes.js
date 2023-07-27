@@ -7,5 +7,4 @@ tastingSheetRouter.get('', (req, res) => new TastingSheetController(req, res).ge
 tastingSheetRouter.get('/:id', (req, res) => new TastingSheetController(req, res).getById());
 tastingSheetRouter.post('', (req, res) => new TastingSheetController(req, res).createTastingSheet());
 
-
 module.exports = tastingSheetRouter;
