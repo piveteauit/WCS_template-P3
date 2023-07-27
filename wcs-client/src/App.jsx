@@ -26,8 +26,8 @@ function App() {
         <Route path="/atelier-creation" element={<AtelierCrea />} />
         <Route path="/atelier-degustation" element={<AtelierDegus />} />
         <Route path='/user/:userId/degustation/:tasteId' element={<FicheDegustation />} />
-        <Route path='/user/:userId/creation/:workshopId' element={<Creation />} />
-        {/* <Route path='/creation' element={<Creation />} /> */}
+        {/* <Route path='/user/:userId/creation/:workshopId' element={<Creation />} /> */}
+        <Route path='/creation' element={<Creation />} />
         <Route path="/notre-histoire" element={<NotreHistoire />} />
         <Route path="/inscription" element={<InscriptionForm />} />
         <Route path='/profil' element={<Profil />} />
