@@ -196,7 +196,9 @@ const FicheDegustation = () => {
                         <span>&nbsp; /10</span></p>
                 </div>
 
+
                 <Link to="/creation" className='inscription-btn'>Valider</Link>
+
             </form>
 
         </div>
