@@ -5,6 +5,7 @@ import MenuBurger from '../components/MenuBurger';
 import Footer from '../components/Footer';
 import '../styles/AtelierCrea.css'
 
+
 const AtelierCrea = () => {
     return (
         <div className='atelier-crea-page'>
@@ -18,6 +19,9 @@ const AtelierCrea = () => {
             </div>
             <p>Bienvenue à l'atelier <span className='inovin'>INOVIN</span>, où vous pourrez créer votre propre vin personnalisé.</p>
 
+            <h1>Atelier Création</h1>
+
+            <p>Atelier <span className='inovin'>INOVIN</span> pour créer votre propre vin personnalisé.</p>
             <p>Notre atelier <span className='inovin'>INOVIN</span> est une expérience unique en son genre : vous apprendrez à concevoir votre vin en sélectionnant les arômes et les saveurs qui correspondent à vos préférences.
 
             Une fois que vous aurez trouvé la composition parfaite, vous pourrez l'enregistrer dans notre base de données, afin de pouvoir la reproduire à tout moment. Vous aurez également l'occasion de présenter votre vin lors de notre concours. </p>

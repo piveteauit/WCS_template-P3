@@ -3,6 +3,7 @@ import MenuBurger from '../components/MenuBurger';
 import Footer from '../components/Footer';
 import Programmes from '../components/Programmes';
 import '../styles/NotreHistoire.css'
+import inovin_logo from '../assets/logo_inovin_noir.png';
 
 const NotreHistoire = () => {
     return (
@@ -11,6 +12,9 @@ const NotreHistoire = () => {
             <MenuBurger />
 
             <h1>Notre histoire</h1>
+            <div className='dashboard-img'>
+                <img src={inovin_logo} alt='logo inovin' />
+                </div>
             <div className='histoire-container'>
                 <h2><span>Notre concept</span></h2>
                 <p>Imaginez :

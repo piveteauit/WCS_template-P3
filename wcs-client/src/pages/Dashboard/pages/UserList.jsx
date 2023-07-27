@@ -161,7 +161,8 @@ function UserList() {
         <tbody>
           {tastingsheet.map(tasting_sheet => (
             <tr key={tasting_sheet.id}>
-              <td>{tasting_sheet.user_id}</td>
+              <td>N/A</td>
+              {/* <td>{tasting_sheet.user_id}</td> */}
               <td>{tasting_sheet.id}</td>
               <td>{getDateNameById(tasting_sheet.date_id)}</td>
               <td>{getColorNameById(tasting_sheet.color_id)}</td>

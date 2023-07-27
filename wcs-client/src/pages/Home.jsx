@@ -3,7 +3,8 @@ import MenuBurger from '../components/MenuBurger';
 import Diapo from '../components/Diapo';     
 import Programmes from '../components/Programmes'
 import Footer from '../components/Footer';
-import '../styles/Home.css'
+import '../styles/Home.css';
+
 
 const Home = () => {
     return (
