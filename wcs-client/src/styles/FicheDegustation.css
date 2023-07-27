@@ -1,3 +1,7 @@
+.vin-container {
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+}
 .note-container>p:first-child {
     color: var(--faded-color);
     font-style: italic;

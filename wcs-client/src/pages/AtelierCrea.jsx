@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import WineCreation from '../assets/wine-creating.jpg'
 import Navbar from '../components/Navbar';
 import MenuBurger from '../components/MenuBurger';
 import Footer from '../components/Footer';
@@ -9,24 +10,29 @@ const AtelierCrea = () => {
         <div className='atelier-crea-page'>
             <Navbar />
             <MenuBurger />
+            <div className='atelier-crea-header'>
+                <div className='atelier-crea-img'>
+                    <img src={WineCreation} alt='Atelier Création' />
+                </div>
+                <h1>Atelier Création</h1> 
+            </div>
+            <p>Bienvenue à l'atelier <span className='inovin'>INOVIN</span>, où vous pourrez créer votre propre vin personnalisé.</p>
 
-            <h1>Atelier Création</h1>
-            <p>Atelier <span className='inovin'>INOVIN</span> pour créer votre propre vin personnalisé.
+            <p>Notre atelier <span className='inovin'>INOVIN</span> est une expérience unique en son genre : vous apprendrez à concevoir votre vin en sélectionnant les arômes et les saveurs qui correspondent à vos préférences.
 
-                Notre atelier <span className='inovin'>INOVIN</span> est unique en son genre : vous apprendrez à créer votre propre vin en sélectionnant les arômes et les saveurs que vous préférez.
+            Une fois que vous aurez trouvé la composition parfaite, vous pourrez l'enregistrer dans notre base de données, afin de pouvoir la reproduire à tout moment. Vous aurez également l'occasion de présenter votre vin lors de notre concours. </p>
 
-                Vous pourrez ensuite enregistrer la composition de votre vin dans notre base de données pour le reproduire à tout moment.
-                Vous pourrez également présenter votre vin à notre concours. </p>
+            <p>Nos ateliers <span className='inovin'>INOVIN</span> ont été conçus pour vous offrir une expérience inoubliable, mêlant découverte, apprentissage et convivialité. Vous serez guidé par des experts passionnés et compétents, qui vous dévoileront les secrets de la création vinicole. </p>
 
-                <p>Alors, prêts à créer votre propre vin ?
+            <p>Que vous soyez une entreprise à la recherche d'une activité originale, un groupe de collègues souhaitant renforcer leurs liens, ou simplement un amateur passionné, notre atelier <span className='inovin'>INOVIN</span> est adapté à tous. </p>
 
-                L'atelier se réalise par groupe de 5 à 10 personnes.
+            <p> Alors, êtes-vous prêts à donner vie à votre propre vin ? N'hésitez pas à nous contacter pour en savoir davantage sur notre offre <span className='inovin'>INOVIN</span> ! </p>
 
-                Après réservation nous prenons contact avec vous pour définir d'une date.
+            <p> Les ateliers se déroulent en groupes de 5 à 10 personnes, et nous vous contacterons après votre réservation pour convenir d'une date. </p>
 
-                A très vite !!!
+            <p>Nous avons hâte de vous accueillir !</p>
 
-            </p>
+            <p>À très bientôt !</p>
 
             <h2><span>Programme</span></h2>
             <ol className='programme-atelier'>

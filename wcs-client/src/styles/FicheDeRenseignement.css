@@ -238,13 +238,14 @@
     justify-content: space-around;
     align-items: center;
 }
-label {
+label.button {
     font-family: var(--secondary-title-font);
     letter-spacing: 0.2em;
     font-size: 1.5em;
     font-weight: bold;
 }
-select {
+.select-cepage>select,
+.select-terroir>select {
     font-family: var(--main-font);
     letter-spacing: 0.1em;
     border-style: none;
@@ -255,7 +256,8 @@ select {
     box-shadow: 4px 5px 1em 0em #d2d2d2;
     transition: 0.3s ease-out;
 }
-select:hover {
+.select-cepage>select:hover,
+.select-terroir>select {
     background-color: #d2d2d2;
 }
 
