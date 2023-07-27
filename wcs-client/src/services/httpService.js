@@ -21,7 +21,12 @@ export function getOne(ressources, id) {
     .catch(error => error)
 }
 
+export function updateOne(ressources, payload, id) {
+    return axios.put(`/${ressources}/${id}`, payload)
+    .then(({data}) => data)
+    .catch(error => error)
+}
 
-export function putTastingSheet(values) {
-    return axios.put("/tastingsheet", values)
+export function putTastingSheet(values, id) {
+    return updateOne('tastingsheet', values, id)
 }

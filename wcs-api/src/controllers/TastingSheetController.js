@@ -30,6 +30,17 @@ class TastingSheetController extends BaseController {
         const id = this.model.getById(this.req.params.id)
              .then(([results]) => this.sendJson(results[0]))
      }
+
+     async updateTastingSheet() {
+        const { notes, taste_id, ...values } = this.req.body;
+        const id = this.req.params.id
+        console.log(this.req.body);
+        await this.model.updateTastingSheet(notes, id)
+        const [nextTastingSheet] = await this.model.findNext(taste_id);
+
+        return this.sendJson(nextTastingSheet[0])
+      
+      }
  
     
     }

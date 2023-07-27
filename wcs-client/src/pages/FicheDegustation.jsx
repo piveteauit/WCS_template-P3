@@ -5,6 +5,7 @@ import '../styles/FicheDegustation.css'
 import React, { useState, useEffect } from 'react';
 import { getAll, getOne, putTastingSheet } from '../services'
 import { object, objectOf } from 'prop-types';
+import { Link } from 'react-router-dom';
 
 
 
@@ -14,7 +15,7 @@ const initialValues = {
     intensity_id: null,
     aromas_id: null,
     flavors_id: null,
-    tastingSheet_id: null,//note//
+    notes: null,//note//
 
 }
 
@@ -23,7 +24,7 @@ const errorMessage = {
     intensity_id: "Intensité obligatoire",
     aromas_id: "Arôme obligatoire",
     flavors_id: "Goût obligatoire",
-    tastingSheet_id: "Note obligatoire"
+    notes: "Note obligatoire"
 }
 
 const checkform = (formValues) => {
@@ -88,9 +89,13 @@ const FicheDegustation = () => {
             setErrorMessage(error);
             return;
         }
-        putTastingSheet({ ...formValues, userId })
+        putTastingSheet({ ...formValues, taste_id:tastingSheet.taste_id }, tasteId )
             .then(function (result) {
-                if (result.id)return navigate(`/user/${userId}/degustation/${result.id}`);
+                if (result.id)
+                {
+                    setFormValues(initialValues)
+                    return navigate(`/user/${userId}/degustation/${result.id}`);
+                }
                 alert ('Vous avez terminé. Vous allez être redirigé ')
         console.log(result)
     })
@@ -186,13 +191,13 @@ const FicheDegustation = () => {
 
                 <div className='note-container'>
                     <p>Merci de noter sur 10 votre appréciation du vin</p>
-                    <p className='note-finale'>Note&nbsp;<input type='number' name='tastingSheet_id' id='note-finale-input' min="0" max="10" onChange={onChange} required />
+                    <p className='note-finale'>Note&nbsp;<input type='number' name='notes' id='note-finale-input' min="0" max="10" onChange={onChange} required />
                         
                         <span>&nbsp; /10</span></p>
                 </div>
-                <a href="votre_lien_cible.html" class="lien-bouton">
-                <button type='submit'>Valider</button>
-                </a>
+
+
+                <Link to="/creation" className='inscription-btn'>Valider</Link>
 
             </form>
 
