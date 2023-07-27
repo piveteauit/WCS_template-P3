@@ -4,6 +4,8 @@ import MenuBurger from '../components/MenuBurger';
 import Footer from '../components/Footer'
 import { IoMdArrowDropright } from 'react-icons/io'
 import '../styles/Profil.css';
+import inovin_logo from '../assets/logo_inovin_noir.png';
+
 
 const Profil = () => {
     return (
@@ -11,6 +13,9 @@ const Profil = () => {
             <Navbar />
             <MenuBurger />
             <h1>Votre profil</h1>
+            <div className='dashboard-img'>
+                <img src={inovin_logo} alt='logo inovin' />
+            </div>
             <div className='profil-header'>
                 <h2><span>Picaut Axel</span></h2>
                 <h3>33 ans</h3>

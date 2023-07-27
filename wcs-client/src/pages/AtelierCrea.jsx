@@ -3,6 +3,7 @@ import Navbar from '../components/Navbar';
 import MenuBurger from '../components/MenuBurger';
 import Footer from '../components/Footer';
 import '../styles/AtelierCrea.css'
+import inovin_logo from '../assets/logo_inovin_noir.png';
 
 const AtelierCrea = () => {
     return (
@@ -11,6 +12,9 @@ const AtelierCrea = () => {
             <MenuBurger />
 
             <h1>Atelier Création</h1>
+            <div className='dashboard-img'>
+                <img src={inovin_logo} alt='logo inovin' />
+                </div>
             <p>Atelier <span className='inovin'>INOVIN</span> pour créer votre propre vin personnalisé.
 
                 Notre atelier <span className='inovin'>INOVIN</span> est unique en son genre : vous apprendrez à créer votre propre vin en sélectionnant les arômes et les saveurs que vous préférez.

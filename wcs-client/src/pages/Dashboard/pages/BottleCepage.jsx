@@ -58,7 +58,7 @@ return (
             <td>{b.year}</td>
             <td>{b.intensity}</td>
             <td>24</td>
-            <td><button onClick={() => handleDelete(b.id)}>Supprimer</button></td>
+            <td><div className='btn'><button onClick={() => handleDelete(b.id)}>Supprimer</button></div></td>
           </tr>
         ))}
       </tbody>
