@@ -26,7 +26,6 @@
     gap: 0.5em;
 }
 
-.atelier-card>h3 {height: 35%;}
 
 
 .atelier-card>a {
@@ -59,8 +58,13 @@
     opacity: 1;
 }
 
+.card-details>h3 {
+    height: 20%;
+    display: flex;
+    align-items: center;
+}
 .atelier-price {
-    height: 15%;
+    height: 10%;
     color: var(--highlight-color);
     transition: 0.3s ease-out;
 }
@@ -72,7 +76,8 @@
 }
 
 .atelier-description {
-    height: 50%;
+    height: 70%;
+    text-align: center;
 }
 
 .atelier-card:hover .atelier-price {color: var(--wine-color);}
