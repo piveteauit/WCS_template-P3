@@ -8,8 +8,7 @@ const Programmes = () => {
                 <div className='card-details'>
                     <h3>Atelier création</h3>
                     <p className='atelier-price'>70,00 €</p>
-                    <p className='atelier-description'>Atelier INOVIN pour créer votre propre vin personnalisé.
-                        Notre atelier INOVIN est unique en son genre : vous apprendrez à créer votre propre vin en sélectionnant les arômes et les saveurs que vous préférez.</p>
+                    <p className='atelier-description'>Découvrez l'art de la création vinicole en participant à notre atelier exclusif. Choisissez les cépages, cultivez les vignes et supervisez la production pour créer votre propre vin personnalisé. Guidés par nos experts passionnés, plongez dans l'univers viticole et créez une expérience œnologique unique qui vous accompagnera pendant des années.</p>
                 </div>
                 <Link to='/atelier-creation' className='atelier-card-btn'>En savoir plus</Link>
             </div>
@@ -17,8 +16,7 @@ const Programmes = () => {
                 <div className='card-details'>
                     <h3>Atelier dégustation</h3>
                     <p className='atelier-price'><span>50,00 €</span> 30, 00€</p>
-                    <p className='atelier-description'>Atelier dégustation de 4 vins a l'aveugle suivi d'accompagnement de Mets.
-                        Vous serez guidé par des experts passionnés et compétents, qui vous feront découvrir les secrets du vin.</p>
+                    <p className='atelier-description'>Éveillez vos sens lors de notre atelier de dégustation à l'aveugle. Découvrez quatre vins sélectionnés avec soin et testez vos capacités sensorielles en identifiant les arômes et les saveurs. Accompagnés de mets délicieux, chaque vin offre une expérience gastronomique raffinée. Plongez dans un voyage gustatif captivant, guidé par nos experts passionnés, et enrichissez votre palais avec des découvertes inattendues.</p>
                 </div>
                 <Link to='/atelier-degustation' className='atelier-card-btn'>En savoir plus</Link>
             </div>
