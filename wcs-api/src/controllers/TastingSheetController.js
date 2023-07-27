@@ -25,6 +25,12 @@ class TastingSheetController extends BaseController {
             });
       
     }
+
+    getById() {
+        const id = this.model.getById(this.req.params.id)
+             .then(([results]) => this.sendJson(results[0]))
+     }
+ 
     
     }
 

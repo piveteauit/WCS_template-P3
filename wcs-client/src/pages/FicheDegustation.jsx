@@ -3,12 +3,14 @@ import Navbar from '../components/Navbar'
 import MenuBurger from '../components/MenuBurger'
 import '../styles/FicheDegustation.css'
 import React, { useState, useEffect } from 'react';
-import { getAll, putTastingSheet } from '../services'
+import { getAll, getOne, putTastingSheet } from '../services'
+import { object, objectOf } from 'prop-types';
+
 
 
 
 const initialValues = {
-    color_id: null,
+    // color_id: null,
     intensity_id: null,
     aromas_id: null,
     flavors_id: null,
@@ -17,7 +19,7 @@ const initialValues = {
 }
 
 const errorMessage = {
-    color_id: "Couleur obligatoire",
+    // color_id: "Couleur obligatoire",
     intensity_id: "Intensité obligatoire",
     aromas_id: "Arôme obligatoire",
     flavors_id: "Goût obligatoire",
@@ -37,33 +39,33 @@ const checkform = (formValues) => {
 }
 
 const isChecked = (id, value) => {
-    return id === value
+    return id == value
 }
 
 
 const FicheDegustation = () => {
     const [formValues, setFormValues] = useState(initialValues)
     const { userId, tasteId } = useParams()
-    const [cepages, setCepages] = useState([])
-    const [terroirs, setTerroirs] = useState([])
-    const [colors, setColors] = useState([])
+    // const [cepages, setCepages] = useState([])
+    // const [terroirs, setTerroirs] = useState([])
+    // const [colors, setColors] = useState([])
     const [intensity, setIntensity] = useState([])
     const [aromas, setAromas] = useState([])
     const [flavors, setFlavors] = useState([])
     const [notes, setNotes] = useState()
     const [errorMessage, setErrorMessage] = useState({})
-    const [tastingSheet, setTastingSheet] = useState([])
+    const [tastingSheet, setTastingSheet] = useState({})
     const navigate = useNavigate()
 
     useEffect(function () {
-        getAll("cepages").then(setCepages)
-        getAll("terroirs").then(setTerroirs)
-        getAll("colors").then(setColors)
+        // getAll("cepages").then(setCepages)
+        // getAll("terroirs").then(setTerroirs)
+        // getAll("colors").then(setColors)
         getAll("intensity").then(setIntensity)
         getAll("aromas").then(setAromas)
         getAll("flavors").then(setFlavors)
         getAll("notes").then(setNotes)
-        getAll("tastingSheet").then(setTastingSheet)
+        getOne("tastingSheet", tasteId).then(setTastingSheet)
     }, [])
 
     const onChange = (el) => {
@@ -73,14 +75,16 @@ const FicheDegustation = () => {
             ...formValues,
             [el.target.name]: value,
         });
+        console.log(value, el.target.value, el.target.name, formValues);
     };
 
 
 
     const onSubmit = (evt) => {
+        
         evt.preventDefault()
         const error = checkform(formValues)
-        if (error) {
+        if (Object.keys(error).length) {
             setErrorMessage(error);
             return;
         }
@@ -106,7 +110,7 @@ const FicheDegustation = () => {
 
                 <h1>FICHE DE DEGUSTATION</h1>
 
-                <div className='color'>
+                {/* <div className='color'>
                     <h2><span>Couleur</span></h2>
                     <div className="olfactif-toggle-container-color">
                         {colors.map((c) => (
@@ -120,6 +124,13 @@ const FicheDegustation = () => {
                         ))}
                         <div>{errorMessage && <p className="error-message">{errorMessage.color_id}</p>}</div>
                     </div>
+                </div> */}
+
+                <div className='color'>
+                    <h2><span>Bouteille n°{tastingSheet.bottle_per_cepage_id}</span></h2>
+                    <p>{tastingSheet.cepages}</p>
+                    
+
                 </div>
 
                 <div className='intensity'>

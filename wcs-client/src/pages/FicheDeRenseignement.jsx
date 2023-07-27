@@ -112,7 +112,7 @@ const checkform = (formValues) => {
                                 <div key={`colors${c.id}`} className='vin-container'>
                                     <p>vin {c.name}</p> 
                                     <div className="checkbox-container">
-                                        <input checked= {isChecked(formValues.color_id, c.id)} name='color_id' value={c.id} type="checkbox" id={`check-vin-color-${c.id}`} onChange={onChange} />
+                                        <input checked={isChecked(formValues.color_id, c.id)} name='color_id' value={c.id} type="checkbox" id={`check-vin-color-${c.id}`} onChange={onChange} />
                                 <label htmlFor={`check-vin-color-${c.id}`} className='button'></label>
                             </div>
                         </div>

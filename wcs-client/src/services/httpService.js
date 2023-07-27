@@ -15,6 +15,13 @@ export function getAll(ressources) {
     .catch(error => error)
 }
 
+export function getOne(ressources, id) {
+    return axios.get(`/${ressources}/${id}`)
+    .then(({data}) => data)
+    .catch(error => error)
+}
+
+
 export function putTastingSheet(values) {
     return axios.put("/tastingsheet", values)
 }
