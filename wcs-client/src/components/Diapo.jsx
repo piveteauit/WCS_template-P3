@@ -11,8 +11,8 @@ const Diapo = () => {
 
     const slides = [
         {image: Lozere, texte: 'Lozère, France', index: 0},
-        {image: Vin_1, texte: 'Bouteilles', index: 1},
-        {image: Vin_2, texte: 'Bouteille', index: 2},
+        {image: Vin_1, index: 1},
+        {image: Vin_2, index: 2},
     ];
 
     return (
