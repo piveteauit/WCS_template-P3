@@ -36,12 +36,13 @@ return (
         <tr>
           <th>Bottle Cepage Id</th>
           <th>REF</th>
-          <th>Colors</th>
           <th>cepages</th>
+          <th>Colors</th>
           <th>Terroirs</th>
           <th>Operators</th>
           <th>Years</th>
           <th>Intensity</th>
+          <th>Quantity</th>
           <th>SUPRIMER</th>
         </tr>
       </thead>
@@ -50,15 +51,14 @@ return (
           <tr key={b.id}>
             <td>{b.id} </td>
             <td>{b.ref}</td>
-            <td>{b.color}</td>
             <td>{b.cepage}</td>
+            <td>{b.color}</td>
             <td>{b.terroir}</td>
-            <td>{b.operator}</td>
+            <td>Local</td>
             <td>{b.year}</td>
             <td>{b.intensity}</td>
-            <td>
-                <button onClick={() => handleDelete(b.id)}>Supprimer</button>
-              </td>
+            <td>24</td>
+            <td><button onClick={() => handleDelete(b.id)}>Supprimer</button></td>
           </tr>
         ))}
       </tbody>

@@ -19,6 +19,7 @@ function BottleSale() {
             <th>Years</th>
             <th>Price</th>
             <th>Quantity</th>
+            <th>Suprimer</th>
           </tr>
         </thead>
         <tbody>
@@ -31,6 +32,7 @@ function BottleSale() {
           <td>2019</td>
           <td>18€80</td>
           <td>12</td>
+          <td><button>Supprimer</button></td>
         </tr>
         <tr>
           <td>2</td>
@@ -41,6 +43,7 @@ function BottleSale() {
           <td>2008</td>
           <td>240€</td>
           <td>6</td>
+          <td><button>Supprimer</button></td>
         </tr>
         <tr>
           <td>3</td>
@@ -51,6 +54,7 @@ function BottleSale() {
           <td>2010</td>
           <td>112€96</td>
           <td>6</td>
+          <td><button>Supprimer</button></td>
         </tr>
         <tr>
           <td>4</td>
@@ -61,6 +65,7 @@ function BottleSale() {
           <td>2000</td>
           <td>86€</td>
           <td>12</td>
+          <td><button>Supprimer</button></td>
         </tr>
         <tr>
           <td>5</td>
@@ -71,6 +76,7 @@ function BottleSale() {
           <td>2008</td>
           <td>8€</td>
           <td>18</td>
+          <td><button>Supprimer</button></td>
         </tr>
         <tr>
           <td>6</td>
@@ -81,12 +87,13 @@ function BottleSale() {
           <td>2013</td>
           <td>30€</td>
           <td>12</td>
+          <td><button>Supprimer</button></td>
         </tr>
-           
-            
         </tbody>
       </table>
-
+      <div className="add-button">
+        <button onClick={''}>Ajouter une Bouteille</button>
+      </div>
   </div>
 
 )}
